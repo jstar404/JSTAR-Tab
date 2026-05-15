@@ -1,84 +1,78 @@
-# 🌟 JSTAR Tab
+<div align="center">
 
-Welcome to **JSTAR Tab**, the ultimate customizable new tab extension for your browser! Whether you're looking for a sleek, modern design, powerful personalization options, or enhanced accessibility, JSTAR Tab has you covered. 🚀  
+<img src="images/icon128.png" alt="JSTAR Tab" width="80" />
 
-Transform your browsing experience with custom greetings, motion control, themes, fonts, and more. 🎉  
+# JSTAR Tab
+
+**A new tab that actually feels like yours.**
+
+[![Version](https://img.shields.io/badge/version-3.2.5-blue?style=flat-square)](https://github.com/jstar404/JSTAR-Tab/releases/latest)
+[![License](https://img.shields.io/github/license/jstar404/JSTAR-Tab?style=flat-square)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/jstar404/JSTAR-Tab?style=flat-square)](https://github.com/jstar404/JSTAR-Tab/stargazers)
+
+<br/>
+
+[<img src="https://junaidweb.vercel.app/images/jstar-tab/AVAILABLE%20ON%20FIREFOX.webp" alt="Available on Firefox Add-ons" />](https://addons.mozilla.org/firefox/addon/jstar-tab/)
+[<img src="https://junaidweb.vercel.app/images/jstar-tab/AVAILABLE%20ON%20CHROMIUM.webp" alt="Available on Chromium Browsers" />](https://github.com/jstar404/JSTAR-Tab/releases/latest)
+
+**[Website](https://jstartab.vercel.app) · [Changelog](https://jstartab.vercel.app/changelog) · [Releases](https://github.com/jstar404/JSTAR-Tab/releases/latest)**
+
+</div>
+
+---
+
+JSTAR Tab replaces your browser's new tab page with something you actually enjoy opening. Your name, your shortcuts, your fonts, your colors — set up in a few clicks during onboarding and tweakable any time from the settings page. It works offline, your data stays local, and there's a full backup/restore system for when you switch devices or reinstall.
+
+## 🖼️ Preview
+
+<p align="center">
+  <img src="https://junaidweb.vercel.app/images/jstar-tab/tab1.webp" alt="JSTAR Tab Main Preview" width="100%" />
+</p>
+
+<p align="center">
+  <img src="https://junaidweb.vercel.app/images/jstar-tab/tab2.webp" alt="Personalized Tab Preview" width="49%" />
+  <img src="https://junaidweb.vercel.app/images/jstar-tab/tab3.webp" alt="Personalized Tab Preview" width="49%" />
+  <img src="https://junaidweb.vercel.app/images/jstar-tab/tab4.webp" alt="Personalized Tab Preview" width="49%" />
+  <img src="https://junaidweb.vercel.app/images/jstar-tab/tab5.webp" alt="Settings Preview" width="49%" />
+</p>
 
 ## ✨ Features
 
-- **Custom Greeting Formats**: Create personalized greetings using dynamic format tags:
-  - `{name}`: Your display name  
-  - `{greeting}`: Time-based greeting (e.g., Good morning)  
-  - `{time}`: Current time  
-  - `{date}`: Current date  
-  - `{day}`: Day of the week  
-  - `{month}`: Current month  
-  - `{year}`: Current year  
+- **👋 Greeting** — Greets you by name with a time-based message using custom variables like `{name}`, `{time}`, `{date}`, and more.
+- **🔗 Shortcuts** — A grid of your favorite sites with auto-fetched favicons. Right-click to edit or delete.
+- **🔍 Search** — Supports Google, Bing, DuckDuckGo, Brave, Perplexity AI and SearXNG. Press `/` to focus instantly.
+- **🎨 Appearance** — Light/dark themes, custom themes, multiple fonts, adjustable sizes, and custom backgrounds.
+- **🎞️ Motion** — Scale animations from full to none for accessibility or personal preference.
+- **🔒 Privacy** — Anonymous Mode masks your name and blurs shortcuts. Password-protect individual shortcuts.
+- **⌘ Shortcuts**: Add, edit, and remove shortcuts to your favorite websites with multiple grid layouts.
+- **⌨️ Keyboard Shortcuts** — Configurable keybinds for settings, anonymous mode, theme switching, and quick-jump URLs.
+- **💾 Backup & Restore** — Export and import exactly what you want, per data category.
 
-  Examples:
-  - "Hello {name}, it's {time} on {day}!"
-  - "{greeting}, {name}! Today is {date}"
-  - "Happy {day}, {name}!"
+## 📦 Installation
 
-- **Font Selection**: Choose from multiple fonts (Inter, Poppins, Roboto, Montserrat, Quicksand, and Comic Sans) to personalize your experience.
-- **Custom Background Images**: Upload and set your favorite images as your new tab background.
-- **Customizable Themes**: Switch between light and dark modes to suit your mood.
-- **Motion Preferences**: Control animation intensity across five levels: Default Animations, Subtle Animations, Reduced Motion, Minimal Motion, and No Animations. Perfect for accessibility and performance preferences.
-- **Privacy Settings**: Includes Anonymous Mode, password protection for individual shortcuts, and more to give you control over your experience.
-- **Shortcut Management**: Add, edit, and remove shortcuts to your favorite websites with an improved grid layout system. Middle-click support allows opening shortcuts in a new tab.
-- **History Page**: View and manage your shortcut browsing history from a dedicated page.
-- **Search Engine Selection**: Choose your preferred search engine for quick and efficient browsing.  
-- **Keyboard Shortcuts**: Set up custom keybinds for various actions:
-  - Open settings
-  - Toggle anonymous mode
-  - Change themes
-  - Open history
-  - Redirect to a specific URL 
-- **Data Backup and Restore**: Export and import your settings and shortcuts effortlessly.
+**🌐 Chromium browsers**
 
-## 🌐 Getting Started
+Download the latest `.zip` from [Releases](https://github.com/jstar404/JSTAR-Tab/releases/latest), extract it, then go to `chrome://extensions`, enable Developer Mode, and click **Load unpacked**.
 
-### Installation  
+**🦊 Firefox**
 
-1. Visit [JSTAR Tab Website](https://jstartab.netlify.app).  
-2. Select your browser or mobile browser from the available options.  
-3. Follow the installation instructions specific to your browser.  
+Install from [Mozilla Add-ons](https://addons.mozilla.org/firefox/addon/jstar-tab/).
 
-### Alternative Manual Installation  
+> [!TIP]
+> **Before updating**, export your data from Settings → Data Management so you can import it back during the new version's onboarding.
 
-1. **Download the Latest Release**: [JSTAR Tab GitHub Releases](https://github.com/DevJSTAR/JSTAR-Tab/releases/latest).  
-2. **Extract the Files**: Unzip the downloaded file to a directory of your choice.  
-3. **Load the Extension**:  
-   - Open your browser and navigate to the extensions page.  
-   - Enable "Developer mode" (usually a toggle in the top right corner).  
-   - Click "Load unpacked" and select the directory where you extracted the files.  
+## 🤝 Contributing
 
-## 🎨 Customizing Your Experience  
+If you encounter a bug or have a feature request, please [open an issue](https://github.com/jstar404/JSTAR-Tab/issues) first. PRs for bug fixes are welcome.
 
-### **Greeting Formats**  
-Personalize your greeting with dynamic tags listed above. Example:  
-"Good {greeting}, {name}! It's {time} on {day}!"  
+## 📄 License
 
-### **Themes & Fonts**  
-- Toggle between light and dark themes from the settings panel.  
-- Select from various font options to match your style.  
+This project is licensed under the [MIT License](LICENSE).
 
-### **Shortcuts & Backgrounds**  
-- Add shortcuts with the "+" button.  
-- Edit or delete shortcuts by right-clicking on them.  
-- Customize your background by uploading your favorite images.  
+---
 
-### **Keyboard Shortcuts**  
-Set up custom keybinds for quick actions like opening settings or switching themes.  
+<div align="center">
 
-## 📄 License  
+**Made with ❤️ by [Junaid](https://junaidweb.vercel.app)**
 
-This project is licensed under the [MIT License](https://github.com/DevJSTAR/JSTAR-Tab/blob/main/LICENSE).  
-
-## 🌐 Connect with Us  
-
-- **[Linktree](https://linktr.ee/jstarsdev)**  
-- **[Patreon](https://patreon.com/jstarsdev)**  
-- **[GitHub Releases](https://github.com/DevJSTAR/JSTAR-Tab/releases/latest)**  
-
-Thank you for choosing JSTAR Tab! We hope you enjoy the seamless, personalized, and now even more **accessible** browsing experience it brings. 🚀
+</div>

@@ -1,1188 +1,1571 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>New JSTAR Tab</title>
-    <link rel="icon" href="/images/favicon.png">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/onboarding.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600&family=Roboto:wght@400;500;700&family=Montserrat:wght@400;500;600&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Onboarding Process -->
+
+    <link rel="icon" href="/images/favicon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/onboarding.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600&family=Roboto:wght@400;500;700&family=Montserrat:wght@400;500;600&family=Quicksand:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="js/storage.js" defer></script>
+    <script src="js/backgrounds.js" defer></script>
+    <script src="js/grid-layout.js" defer></script>
+
+    <script src="js/shortcuts.js" defer></script>
+    <script src="js/search.js" defer></script>
+    <script src="js/keybinds.js" defer></script>
+    <script src="js/settings.js" defer></script>
+
+    <script src="js/notifications.js" defer></script>
+    <script src="js/cache-handler.js" defer></script>
+    <script src="js/version.js" defer></script>
+
+    <script src="js/onboarding.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
     <div id="onboarding-container" class="container-ob hidden">
-        <!-- Step 1: Welcome -->
-        <div class="step-ob" data-step="1">
-            <h1 class="title-ob">Welcome to JSTAR Tab</h1>
-            <p class="subtitle-ob">Let's personalize your new tab experience together. We'll help you set up everything just the way you like it.</p>
-            
-            <div class="options-grid-ob">
-                <div class="option-card-ob" data-action="start-fresh">
-                    <svg><use href="#icon-sparkle"/></svg>
-                    <h3>Start Fresh</h3>
-                    <p>Begin with a clean slate and customize everything from scratch</p>
-                </div>
-                <div class="option-card-ob" data-action="import-data">
-                    <svg><use href="#icon-import"/></svg>
-                    <h3>Import Settings</h3>
-                    <p>Already have a JSTAR Tab setup? Import your existing settings</p>
-                </div>
-            </div>
-        </div>
+      <div class="step-ob" data-step="1">
+        <h1 class="title-ob">Welcome to JSTAR Tab</h1>
+        <p class="subtitle-ob">
+          Let's personalize your new tab experience together. We'll help you set
+          up everything just the way you like it.
+        </p>
 
-        <!-- Step 2: Theme Selection -->
-        <div class="step-ob" data-step="2">
-            <h1 class="title-ob">Choose Your Theme</h1>
-            <p class="subtitle-ob">Pick a theme that's easy on your eyes. You can always change this later.</p>
-            
-            <div class="options-grid-ob">
-                <div class="option-card-ob" data-theme="light">
-                    <div class="theme-preview-ob light-ob">
-                        <div class="theme-preview-content-ob">
-                            <div class="preview-search-ob"></div>
-                            <div class="preview-shortcuts-ob">
-                                <div class="preview-shortcut-ob"></div>
-                                <div class="preview-shortcut-ob"></div>
-                                <div class="preview-shortcut-ob"></div>
-                                <div class="preview-shortcut-ob"></div>
-                                <div class="preview-shortcut-ob"></div>
-                                <div class="preview-shortcut-ob"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <h3>Light Theme</h3>
-                    <p>Clean and bright interface</p>
-                </div>
-                <div class="option-card-ob" data-theme="dark">
-                    <div class="theme-preview-ob dark-ob">
-                        <div class="theme-preview-content-ob">
-                            <div class="preview-search-ob"></div>
-                            <div class="preview-shortcuts-ob">
-                                <div class="preview-shortcut-ob"></div>
-                                <div class="preview-shortcut-ob"></div>
-                                <div class="preview-shortcut-ob"></div>
-                                <div class="preview-shortcut-ob"></div>
-                                <div class="preview-shortcut-ob"></div>
-                                <div class="preview-shortcut-ob"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <h3>Dark Theme</h3>
-                    <p>Easy on the eyes at night</p>
-                </div>
-            </div>
+        <div class="options-grid-ob">
+          <div class="option-card-ob" data-action="start-fresh">
+            <svg width="24" height="24">
+              <use href="icons.svg#sparkle"></use>
+            </svg>
+            <h3>Start Fresh</h3>
+            <p>
+              Begin with a clean slate and customize everything from scratch
+            </p>
+          </div>
+          <div class="option-card-ob" data-action="import-data">
+            <svg width="24" height="24">
+              <use href="icons.svg#import"></use>
+            </svg>
+            <h3>Import Settings</h3>
+            <p>Already have a JSTAR Tab setup? Import your existing settings</p>
+          </div>
         </div>
+      </div>
 
-        <!-- Step 3: Font Selection -->
-        <div class="step-ob" data-step="3">
-            <h1 class="title-ob">Pick Your Font</h1>
-            <p class="subtitle-ob">Choose a font that makes reading comfortable for you.</p>
-            
-            <div class="options-grid-ob">
-                <div class="option-card-ob" data-font="Inter">
-                    <div class="font-preview-ob" style="font-family: Inter">Aa</div>
-                    <h3 style="font-family: Inter">Inter</h3>
-                    <p style="font-family: Inter">Modern and clean</p>
+      <div class="step-ob" data-step="2">
+        <h1 class="title-ob">Choose Your Theme</h1>
+        <p class="subtitle-ob">
+          Pick a theme that's easy on your eyes. You can always change this
+          later.
+        </p>
+
+        <div class="options-grid-ob">
+          <div class="option-card-ob" data-theme="light">
+            <div class="theme-preview-ob light-ob">
+              <div class="theme-preview-content-ob">
+                <div class="preview-search-ob"></div>
+                <div class="preview-shortcuts-ob">
+                  <div class="preview-shortcut-ob"></div>
+                  <div class="preview-shortcut-ob"></div>
+                  <div class="preview-shortcut-ob"></div>
+                  <div class="preview-shortcut-ob"></div>
+                  <div class="preview-shortcut-ob"></div>
+                  <div class="preview-shortcut-ob"></div>
                 </div>
-                <div class="option-card-ob" data-font="Poppins">
-                    <div class="font-preview-ob" style="font-family: Poppins">Aa</div>
-                    <h3 style="font-family: Poppins">Poppins</h3>
-                    <p style="font-family: Poppins">Geometric and friendly</p>
-                </div>
-                <div class="option-card-ob" data-font="Roboto">
-                    <div class="font-preview-ob" style="font-family: Roboto">Aa</div>
-                    <h3 style="font-family: Roboto">Roboto</h3>
-                    <p style="font-family: Roboto">Clear and readable</p>
-                </div>
-                <div class="option-card-ob" data-font="Montserrat">
-                    <div class="font-preview-ob" style="font-family: Montserrat">Aa</div>
-                    <h3 style="font-family: Montserrat">Montserrat</h3>
-                    <p style="font-family: Montserrat">Elegant and stylish</p>
-                </div>
-                <div class="option-card-ob" data-font="Quicksand">
-                    <div class="font-preview-ob" style="font-family: Quicksand">Aa</div>
-                    <h3 style="font-family: Quicksand">Quicksand</h3>
-                    <p style="font-family: Quicksand">Rounded and soft</p>
-                </div>
-                <div class="option-card-ob" data-font="Comic Sans MS">
-                    <div class="font-preview-ob" style="font-family: Comic Sans MS">Aa</div>
-                    <h3 style="font-family: Comic Sans MS">Comic Sans</h3>
-                    <p style="font-family: Comic Sans MS">Fun and playful</p>
-                </div>
+              </div>
             </div>
-        </div>
-
-        <!-- Step 4: Name Input -->
-        <div class="step-ob" data-step="4">
-            <h1 class="title-ob">Make It Personal</h1>
-            <p class="subtitle-ob">Tell us your name and we'll greet you every time you open a new tab.</p>
-            
-            <div class="name-input-container-ob">
-                <input type="text" id="user-name" class="name-input-ob" placeholder="Name" autocomplete="off">
+            <h3>Light Theme</h3>
+            <p>Clean and bright interface</p>
+          </div>
+          <div class="option-card-ob" data-theme="dark">
+            <div class="theme-preview-ob dark-ob">
+              <div class="theme-preview-content-ob">
+                <div class="preview-search-ob"></div>
+                <div class="preview-shortcuts-ob">
+                  <div class="preview-shortcut-ob"></div>
+                  <div class="preview-shortcut-ob"></div>
+                  <div class="preview-shortcut-ob"></div>
+                  <div class="preview-shortcut-ob"></div>
+                  <div class="preview-shortcut-ob"></div>
+                  <div class="preview-shortcut-ob"></div>
+                </div>
+              </div>
             </div>
+            <h3>Dark Theme</h3>
+            <p>Easy on the eyes at night</p>
+          </div>
         </div>
+      </div>
 
-        <!-- Step 5: Search Engine Selection -->
-        <div class="step-ob" data-step="5">
-            <h1 class="title-ob">Choose Your Search Engine</h1>
-            <p class="subtitle-ob">Select your preferred way to search the web.</p>
-            
-            <div class="options-grid-ob">
-                <div class="option-card-ob" data-engine="google">
-                    <img src="https://www.google.com/favicon.ico" alt="Google">
-                    <h3>Google</h3>
-                    <p>The world's most popular search engine</p>
-                </div>
-                <div class="option-card-ob" data-engine="bing">
-                    <img src="https://www.bing.com/favicon.ico" alt="Bing">
-                    <h3>Bing</h3>
-                    <p>Microsoft's intelligent search</p>
-                </div>
-                <div class="option-card-ob" data-engine="duckduckgo">
-                    <img src="https://duckduckgo.com/favicon.ico" alt="DuckDuckGo">
-                    <h3>DuckDuckGo</h3>
-                    <p>Privacy-focused search</p>
-                </div>
-                <div class="option-card-ob" data-engine="brave">
-                    <img src="https://brave.com/static-assets/images/brave-favicon.png" alt="Brave">
-                    <h3>Brave</h3>
-                    <p>Independent and secure</p>
-                </div>
-                <div class="option-card-ob" data-engine="qwant">
-                    <img src="https://www.qwant.com/favicon.ico" alt="Qwant">
-                    <h3>Qwant</h3>
-                    <p>European privacy-first search</p>
-                </div>
-                <div class="option-card-ob" data-engine="searxng">
-                    <img src="https://www.searx.org/favicon.ico" alt="SearXNG">
-                    <h3>SearXNG</h3>
-                    <p>Meta search engine</p>
-                </div>
+      <div class="step-ob" data-step="3">
+        <h1 class="title-ob">Pick Your Font</h1>
+        <p class="subtitle-ob">
+          Choose a font that makes reading comfortable for you.
+        </p>
+
+        <div class="options-grid-ob">
+          <div class="option-card-ob" data-font="Inter">
+            <div class="font-preview-ob" style="font-family: Inter">Aa</div>
+            <h3 style="font-family: Inter">Inter</h3>
+            <p style="font-family: Inter">Modern and clean</p>
+          </div>
+          <div class="option-card-ob" data-font="Poppins">
+            <div class="font-preview-ob" style="font-family: Poppins">Aa</div>
+            <h3 style="font-family: Poppins">Poppins</h3>
+            <p style="font-family: Poppins">Geometric and friendly</p>
+          </div>
+          <div class="option-card-ob" data-font="Roboto">
+            <div class="font-preview-ob" style="font-family: Roboto">Aa</div>
+            <h3 style="font-family: Roboto">Roboto</h3>
+            <p style="font-family: Roboto">Clear and readable</p>
+          </div>
+          <div class="option-card-ob" data-font="Montserrat">
+            <div class="font-preview-ob" style="font-family: Montserrat">
+              Aa
             </div>
-        </div>
-
-        <!-- Navigation -->
-        <div class="nav-ob">
-            <button id="prev-step" class="button-ob">
-                <svg><use href="#icon-arrow-left"/></svg>
-                Back
-            </button>
-            <div class="progress-dots-ob"></div>
-            <button id="next-step" class="button-ob primary-ob">
-                Next
-                <svg><use href="#icon-arrow-right"/></svg>
-            </button>
-        </div>
-        
-        <input type="file" id="onboarding-import" accept=".json" style="display: none;">
-    </div>
-
-    <!-- Main Application Content -->
-    <div id="main-content" class="hidden">
-        <div class="center-container">
-            <div id="greeting"></div>
-            <div id="search-container" class="search-container">
-                <div class="search-wrapper">
-                    <input type="text" id="search-bar" placeholder="Search the web">
-                    <button id="search-button" class="search-icon">
-                        <svg><use href="#icon-search"/></svg>
-                    </button>
-                </div>
+            <h3 style="font-family: Montserrat">Montserrat</h3>
+            <p style="font-family: Montserrat">Elegant and stylish</p>
+          </div>
+          <div class="option-card-ob" data-font="Quicksand">
+            <div class="font-preview-ob" style="font-family: Quicksand">Aa</div>
+            <h3 style="font-family: Quicksand">Quicksand</h3>
+            <p style="font-family: Quicksand">Rounded and soft</p>
+          </div>
+          <div class="option-card-ob" data-font="Comic Sans MS">
+            <div class="font-preview-ob" style="font-family: Comic Sans MS">
+              Aa
             </div>
-            <div class="shortcuts-container">
-                <div id="shortcuts-grid"></div>
-                <button id="add-shortcut" class="btn-primary">
-                    <svg><use href="#icon-plus"/></svg>
-                </button>
-            </div>
+            <h3 style="font-family: Comic Sans MS">Comic Sans</h3>
+            <p style="font-family: Comic Sans MS">Fun and playful</p>
+          </div>
         </div>
+      </div>
 
-        <button id="settings-button" class="settings-button">
-            <svg><use href="#icon-settings"/></svg>
+      <div class="step-ob" data-step="4">
+        <h1 class="title-ob">Make It Personal</h1>
+        <p class="subtitle-ob">
+          Tell us your name and we'll greet you every time you open a new tab.
+        </p>
+
+        <div class="name-input-container-ob">
+          <input
+            type="text"
+            id="user-name"
+            class="name-input-ob"
+            placeholder="Name"
+            autocomplete="off"
+          />
+        </div>
+      </div>
+
+      <div class="step-ob" data-step="5">
+        <h1 class="title-ob">Choose Your Search Engine</h1>
+        <p class="subtitle-ob">Select your preferred way to search the web.</p>
+
+        <div class="options-grid-ob">
+          <div class="option-card-ob" data-engine="google">
+            <img src="images/search-engines/google.svg" alt="Google" />
+            <h3>Google</h3>
+            <p>The world's most popular search engine</p>
+          </div>
+          <div class="option-card-ob" data-engine="bing">
+            <img src="images/search-engines/bing.svg" alt="Bing" />
+            <h3>Bing</h3>
+            <p>Microsoft's intelligent search</p>
+          </div>
+          <div class="option-card-ob" data-engine="duckduckgo">
+            <img src="images/search-engines/duckduckgo.svg" alt="DuckDuckGo" />
+            <h3>DuckDuckGo</h3>
+            <p>Privacy-focused search</p>
+          </div>
+          <div class="option-card-ob" data-engine="brave">
+            <img src="images/search-engines/brave.svg" alt="Brave" />
+            <h3>Brave</h3>
+            <p>Independent and secure</p>
+          </div>
+          <div class="option-card-ob" data-engine="perplexity">
+            <img
+              src="images/search-engines/perplexity-ai.svg"
+              alt="Perplexity AI"
+            />
+            <h3>Perplexity AI</h3>
+            <p>AI-powered answer engine</p>
+          </div>
+          <div class="option-card-ob" data-engine="searxng">
+            <img src="images/search-engines/searxng.svg" alt="SearXNG" />
+            <h3>SearXNG</h3>
+            <p>Meta search engine</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-ob">
+        <button id="prev-step" class="button-ob">
+          <svg width="24" height="24"><use href="icons.svg#back"></use></svg>
+          Back
         </button>
+        <div class="progress-dots-ob"></div>
+        <button id="next-step" class="button-ob primary-ob">
+          Next
+          <svg width="24" height="24"><use href="icons.svg#next"></use></svg>
+        </button>
+      </div>
+
+      <input
+        type="file"
+        id="onboarding-import"
+        accept=".json"
+        style="display: none"
+      />
     </div>
 
-    <!-- Settings Page -->
-    <div id="settings-page" class="settings-page hidden">
-        <div class="settings-container">
-            <div class="settings-sidebar">
-                <div class="settings-sidebar-header">
-                    <button id="back-to-home" class="btn-icon">
-                        <svg><use href="#icon-arrow-left"/></svg>
-                    </button>
-                <h2>Settings</h2>
-                </div>
-                <nav class="settings-nav">
-                    <a href="#personalization" class="settings-nav-item active" data-section="personalization">
-                        <svg><use href="#icon-user"/></svg>
-                        <span>Personalization</span>
-                    </a>
-                    <a href="#appearance" class="settings-nav-item" data-section="appearance">
-                        <svg><use href="#icon-paint"/></svg>
-                        <span>Appearance</span>
-                    </a>
-                    <a href="#privacy" class="settings-nav-item" data-section="privacy">
-                        <svg><use href="#icon-lock"/></svg>
-                        <span>Privacy</span>
-                    </a>
-                    <a href="#search" class="settings-nav-item" data-section="search">
-                        <svg><use href="#icon-search"/></svg>
-                        <span>Search</span>
-                    </a>
-                    <a href="#shortcuts" class="settings-nav-item" data-section="shortcuts">
-                        <svg><use href="#icon-shortcuts"/></svg>
-                        <span>Shortcuts</span>
-                    </a>
-                    <a href="#backgrounds" class="settings-nav-item" data-section="backgrounds">
-                        <svg><use href="#icon-image"/></svg>
-                        <span>Backgrounds</span>
-                    </a>
-                    <a href="#data" class="settings-nav-item" data-section="data">
-                        <svg><use href="#icon-database"/></svg>
-                        <span>Data Management</span>
-                    </a>
-                    <a href="#about" class="settings-nav-item" data-section="about">
-                        <svg><use href="#icon-info"/></svg>
-                        <span>About</span>
-                    </a>
-                </nav>
-            </div>
-            <div class="settings-content">
-                <div id="personalization" class="settings-section active">
-                    <h3>Personalization</h3>
-                    <div class="settings-card">
-                        <div class="settings-card-header">
-                            <div class="settings-card-icon">
-                                <svg><use href="#icon-user"/></svg>
-                            </div>
-                            <div class="settings-card-title">
-                                <h4>Profile Settings</h4>
-                                <p>Customize how you appear and interact with JSTAR Tab</p>
-                            </div>
-                        </div>
-                    <div class="setting-item">
-                        <div class="setting-label">Display Name</div>
-                            <div class="setting-description">This name will be used in your greeting message</div>
-                        <input type="text" id="settings-name" placeholder="Enter your name">
-                    </div>
-                </div>
-
-                    <div class="settings-card">
-                        <div class="settings-card-header">
-                            <div class="settings-card-icon">
-                                <svg><use href="#icon-message"/></svg>
-                            </div>
-                            <div class="settings-card-title">
-                                <h4>Greeting Customization</h4>
-                                <p>Personalize your welcome message</p>
-                            </div>
-                        </div>
-                    <div class="setting-item">
-                            <div class="setting-label">Custom Greeting</div>
-                            <div class="setting-description">Create your own greeting format using the available variables</div>
-                            <input type="text" id="custom-greeting" placeholder="Enter custom greeting">
-                            <span class="format-hint">Available variables: {name}, {greeting}, {time}, {date}, {day}, {month}, {year}</span>
-                        </div>
-                    </div>
-
-                    <div class="settings-card">
-                        <div class="settings-card-header">
-                            <div class="settings-card-icon">
-                                <svg><use href="#icon-bell"/></svg>
-                            </div>
-                            <div class="settings-card-title">
-                                <h4>Notifications</h4>
-                                <p>Configure update notifications and alerts</p>
-                            </div>
-                        </div>
-                        <div class="setting-item horizontal">
-                            <div>
-                                <div class="setting-label">Update Alerts</div>
-                                <div class="setting-description">Get notified when new updates are available</div>
-                            </div>
-                            <label class="toggle">
-                                <input type="checkbox" id="toggle-update-alerts" checked>
-                                <span class="toggle-slider"></span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="appearance" class="settings-section">
-                    <h3>Appearance</h3>
-                    <div class="settings-card">
-                        <div class="settings-card-header">
-                            <div class="settings-card-icon">
-                                <svg><use href="#icon-sparkle"/></svg>
-                            </div>
-                            <div class="settings-card-title">
-                                <h4>Theme Settings</h4>
-                                <p>Customize the look and feel of JSTAR Tab</p>
-                            </div>
-                        </div>
-                        <div class="setting-item horizontal">
-                            <div>
-                                <div class="setting-label">Theme</div>
-                                <div class="setting-description">Switch between light and dark mode</div>
-                            </div>
-                            <button id="toggle-theme" class="btn-icon">
-                                <svg><use href="#icon-light-mode"/></svg>
-                            </button>
-                        </div>
-                        <div class="setting-item">
-                            <div class="setting-label">Icon Style</div>
-                            <div class="setting-description">Choose between linear or solid icon styles</div>
-                            <div class="custom-select">
-                                <select id="icon-style-select">
-                                    <option value="linear" class="icon-style-linear">Linear</option>
-                                    <option value="solid" class="icon-style-solid">Solid</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="setting-item">
-                            <div class="setting-label">Motion Preference</div>
-                            <div class="setting-description">Control how animations and transitions appear</div>
-                            <div class="custom-select">
-                                <select id="motion-preference-select">
-                                    <option value="default">Default Animations</option>
-                                    <option value="subtle">Subtle Animations</option>
-                                    <option value="reduced">Reduced Motion</option>
-                                    <option value="minimal">Minimal Motion</option>
-                                    <option value="disabled">No Animations</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="settings-card">
-                        <div class="settings-card-header">
-                            <div class="settings-card-icon">
-                                <svg><use href="#icon-text"/></svg>
-                            </div>
-                            <div class="settings-card-title">
-                                <h4>Typography</h4>
-                                <p>Customize fonts and text sizes</p>
-                            </div>
-                            <button id="reset-font-size" class="btn-reset">Reset to Default</button>
-                        </div>
-                        <div class="setting-item">
-                            <div class="setting-label">Font Family</div>
-                            <div class="setting-description">Choose your preferred font for the interface</div>
-                            <div class="custom-select">
-                                <select id="font-family-select">
-                                    <option value="Inter" style="font-family: Inter">Inter</option>
-                                    <option value="Poppins" style="font-family: Poppins">Poppins</option>
-                                    <option value="Roboto" style="font-family: Roboto">Roboto</option>
-                                    <option value="Montserrat" style="font-family: Montserrat">Montserrat</option>
-                                    <option value="Quicksand" style="font-family: Quicksand">Quicksand</option>
-                                    <option value="Comic Sans MS" style="font-family: 'Comic Sans MS', cursive">Comic Sans MS</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="setting-item">
-                            <div class="setting-label">Font Size</div>
-                            <div class="setting-description">Adjust the size of text throughout the interface</div>
-                            <div class="font-size-control">
-                                <div class="slider-container">
-                                    <input type="range" id="font-size-slider" min="8" max="36" step="1">
-                                </div>
-                                <div class="font-size-input">
-                                    <input type="number" id="font-size-number" min="8" max="36">
-                                    <span>px</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="settings-card">
-                        <div class="settings-card-header">
-                            <div class="settings-card-icon">
-                                <svg><use href="#icon-layout"/></svg>
-                            </div>
-                            <div class="settings-card-title">
-                                <h4>Layout Settings</h4>
-                                <p>Configure which elements are visible on your new tab page</p>
-                            </div>
-                            <button class="btn-reset" id="reset-layout">Reset to Default</button>
-                        </div>
-                        <div class="setting-item horizontal">
-                            <div>
-                                <div class="setting-label">Show Greeting</div>
-                                <div class="setting-description">Display the welcome message</div>
-                            </div>
-                            <label class="toggle">
-                                <input type="checkbox" id="toggle-greeting" checked>
-                                <span class="toggle-slider"></span>
-                            </label>
-                        </div>
-                        <div class="setting-item horizontal">
-                            <div>
-                                <div class="setting-label">Show Search Bar</div>
-                                <div class="setting-description">Display the search bar for quick web searches</div>
-                            </div>
-                            <label class="toggle">
-                                <input type="checkbox" id="toggle-search" checked>
-                                <span class="toggle-slider"></span>
-                            </label>
-                        </div>
-                        <div class="setting-item horizontal">
-                            <div>
-                                <div class="setting-label">Show Shortcuts</div>
-                                <div class="setting-description">Display your favorite website shortcuts</div>
-                            </div>
-                            <label class="toggle">
-                                <input type="checkbox" id="toggle-shortcuts" checked>
-                                <span class="toggle-slider"></span>
-                            </label>
-                        </div>
-                        <div class="setting-item horizontal">
-                            <div>
-                                <div class="setting-label">Show Add Shortcut Button</div>
-                                <div class="setting-description">Display the button to add new shortcuts</div>
-                            </div>
-                            <label class="toggle">
-                                <input type="checkbox" id="toggle-add-shortcut" checked>
-                                <span class="toggle-slider"></span>
-                            </label>
-                        </div>
-                        <div class="setting-item">
-                            <div class="setting-label">Grid Layout</div>
-                            <div class="setting-description">Choose how your content is organized</div>
-                            <div class="custom-select">
-                                <select id="grid-layout-type">
-                                    <option value="default">Default Grid</option>
-                                    <option value="compact">Compact Grid</option>
-                                    <option value="comfortable">Comfortable Grid</option>
-                                    <option value="list">List View</option>
-                                    <option value="custom">Custom Grid</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div id="custom-grid-settings" class="setting-item hidden">
-                            <div class="setting-label">Custom Grid Settings</div>
-                            <div class="setting-description">Customize your grid layout with specific dimensions</div>
-                            <div class="custom-grid-controls">
-                                <div class="grid-control">
-                                    <label for="grid-columns">Columns</label>
-                                    <input type="number" id="grid-columns" min="1" max="12" value="5">
-                                </div>
-                                <div class="grid-control">
-                                    <label for="grid-gap">Spacing</label>
-                                    <input type="number" id="grid-gap" min="0" max="50" value="16">
-                                </div>
-                                <div class="grid-control">
-                                    <label for="grid-size">Item Size</label>
-                                    <input type="number" id="grid-size" min="40" max="200" value="80">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="setting-item horizontal">
-                            <div>
-                                <div class="setting-label">Resizable Items</div>
-                                <div class="setting-description">Allow items to be resized within the grid</div>
-                            </div>
-                            <label class="toggle">
-                                <input type="checkbox" id="toggle-resizable">
-                                <span class="toggle-slider"></span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="settings-card">
-                        <div class="settings-card-header">
-                            <div class="settings-card-icon">
-                                <svg><use href="#icon-light-mode"/></svg>
-                            </div>
-                            <div class="settings-card-title">
-                                <h4>Light Mode Colors</h4>
-                                <p>Customize the color scheme for light mode</p>
-                            </div>
-                            <button id="reset-light-colors" class="btn-reset">Reset to Default</button>
-                        </div>
-                        <div id="light-mode-colors">
-                            <!-- Color settings will be dynamically added here -->
-                        </div>
-                    </div>
-
-                    <div class="settings-card">
-                        <div class="settings-card-header">
-                            <div class="settings-card-icon">
-                                <svg><use href="#icon-dark-mode"/></svg>
-                            </div>
-                            <div class="settings-card-title">
-                                <h4>Dark Mode Colors</h4>
-                                <p>Customize the color scheme for dark mode</p>
-                            </div>
-                            <button id="reset-dark-colors" class="btn-reset">Reset to Default</button>
-                        </div>
-                        <div id="dark-mode-colors">
-                            <!-- Color settings will be dynamically added here -->
-                        </div>
-                    </div>
-                </div>
-
-                <div id="search" class="settings-section">
-                    <h3>Search</h3>
-                    <div class="settings-card">
-                        <div class="settings-card-header">
-                            <div class="settings-card-icon">
-                                <svg><use href="#icon-search"/></svg>
-                            </div>
-                            <div class="settings-card-title">
-                                <h4>Search Engine</h4>
-                                <p>Choose your preferred search engine for the search bar</p>
-                            </div>
-                        </div>
-                        <div class="setting-item">
-                            <div class="setting-label">Default Search Engine</div>
-                            <div class="setting-description">Select which search engine to use when searching from the new tab page</div>
-                            <div class="custom-select">
-                            <select id="search-engine-select">
-                                    <option value="google" class="search-engine-google">Google</option>
-                                    <option value="bing" class="search-engine-bing">Bing</option>
-                                    <option value="duckduckgo" class="search-engine-duckduckgo">DuckDuckGo</option>
-                                    <option value="brave" class="search-engine-brave">Brave</option>
-                                    <option value="qwant" class="search-engine-qwant">Qwant</option>
-                                    <option value="searxng" class="search-engine-searxng">SearXNG</option>
-                            </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="shortcuts" class="settings-section">
-                    <h3>Keyboard Shortcuts</h3>
-                    <div class="settings-card">
-                        <div class="settings-card-header">
-                            <div class="settings-card-icon">
-                                <svg><use href="#icon-shortcuts"/></svg>
-                            </div>
-                            <div class="settings-card-title">
-                                <h4>Shortcut Settings</h4>
-                                <p>Manage your keyboard shortcuts for quick access</p>
-                            </div>
-                        </div>
-                        <div class="setting-item">
-                            <div class="setting-label">Settings Menu</div>
-                            <div class="keybind-container">
-                                <input type="text" id="keybind-settings" placeholder="Press keys..." readonly>
-                                <button class="clear-keybind" data-for="settings">×</button>
-                            </div>
-                        </div>
-                        <div class="setting-item">
-                            <div class="setting-label">Toggle Anonymous Mode</div>
-                            <div class="keybind-container">
-                                <input type="text" id="keybind-anonymous" placeholder="Press keys..." readonly>
-                                <button class="clear-keybind" data-for="anonymous">×</button>
-                            </div>
-                        </div>
-                        <div class="setting-item">
-                            <div class="setting-label">Toggle Theme</div>
-                            <div class="keybind-container">
-                                <input type="text" id="keybind-theme" placeholder="Press keys..." readonly>
-                                <button class="clear-keybind" data-for="theme">×</button>
-                            </div>
-                        </div>
-                        <div class="setting-item">
-                            <div class="setting-label">History Page</div>
-                            <div class="keybind-container">
-                                <input type="text" id="keybind-history" placeholder="Press keys..." readonly>
-                                <button class="clear-keybind" data-for="history">×</button>
-                            </div>
-                        </div>
-                        <div class="setting-item">
-                            <div class="setting-label">Quick URL</div>
-                            <div class="keybind-container">
-                                <input type="text" id="keybind-url-combo" placeholder="Press keys..." readonly>
-                                <button class="clear-keybind" data-for="url">×</button>
-                            </div>
-                            <input type="text" id="keybind-url" placeholder="Enter URL">
-                        </div>
-                    </div>
-                </div>
-
-                <div id="privacy" class="settings-section">
-                    <h3>Privacy</h3>
-                    <div class="settings-card">
-                        <div class="settings-card-header">
-                            <div class="settings-card-icon">
-                                <svg><use href="#icon-lock"/></svg>
-                            </div>
-                            <div class="settings-card-title">
-                                <h4>Privacy Settings</h4>
-                                <p>Control privacy and security features</p>
-                            </div>
-                        </div>
-                        <div class="setting-item horizontal">
-                            <div>
-                                <div class="setting-label">Anonymous Mode</div>
-                                <div class="setting-description">Hide your real name and use a randomly generated one</div>
-                            </div>
-                            <label class="toggle">
-                                <input type="checkbox" id="toggle-anonymous">
-                                <span class="toggle-slider"></span>
-                            </label>
-                        </div>
-                        <div class="setting-item horizontal">
-                            <div>
-                                <div class="setting-label">Password Protected Shortcuts</div>
-                                <div class="setting-description">Add password protection to specific shortcuts</div>
-                            </div>
-                            <label class="toggle">
-                                <input type="checkbox" id="toggle-shortcuts-password">
-                                <span class="toggle-slider"></span>
-                            </label>
-                        </div>
-                        <div id="password-protection-settings" class="setting-item hidden">
-                            <div class="setting-label">Master Password</div>
-                            <div class="setting-description">Set a master password for your protected shortcuts</div>
-                            <div class="input-group">
-                                <input type="password" id="master-password" placeholder="Enter master password">
-                            </div>
-                            <button id="save-master-password" class="btn-primary">Save Password</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="backgrounds" class="settings-section">
-                    <h3>Backgrounds</h3>
-                    <div class="settings-card">
-                        <div class="settings-card-header">
-                            <div class="settings-card-icon">
-                                <svg><use href="#icon-image"/></svg>
-                            </div>
-                            <div class="settings-card-title">
-                                <h4>Custom Background</h4>
-                                <p>Personalize your new tab page with custom backgrounds</p>
-                            </div>
-                        </div>
-                        <div class="background-preview-grid" id="background-preview-grid">
-                            <div class="background-preview empty" id="default-background">
-                                <svg><use href="#icon-close"/></svg>
-                            </div>
-                            <!-- Previews will be added here dynamically -->
-                        </div>
-                        <label for="background-upload" class="file-input-label">Upload New Background</label>
-                        <input type="file" id="background-upload" accept="image/*" class="file-input">
-                    </div>
-                </div>
-
-                <div id="data" class="settings-section">
-                    <h3>Data Management</h3>
-                    <div class="settings-card">
-                        <div class="settings-card-header">
-                            <div class="settings-card-icon">
-                                <svg><use href="#icon-database"/></svg>
-                            </div>
-                            <div class="settings-card-title">
-                                <h4>Backup & Restore</h4>
-                                <p>Manage your JSTAR Tab data and settings</p>
-                            </div>
-                        </div>
-                        <div class="setting-item">
-                            <div class="setting-description">Export your settings, shortcuts, and customizations to a file, or restore them from a previous backup.</div>
-                    <div class="data-management-buttons">
-                        <button id="import-data" class="btn-primary">
-                            <svg><use href="#icon-import"/></svg> Import Data
-                        </button>
-                        <button id="export-data" class="btn-primary">
-                            <svg><use href="#icon-export"/></svg> Export Data
-                        </button>
-                        <button id="reset-data" class="btn-primary btn-danger">
-                            <svg><use href="#icon-delete"/></svg> Reset All Data
-                        </button>
-                    </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="about" class="settings-section">
-                    <h3>About</h3>
-                    <div class="settings-card">
-                        <div class="settings-card-header">
-                            <div class="settings-card-icon">
-                                <svg><use href="#icon-info"/></svg>
-                            </div>
-                            <div class="settings-card-title">
-                                <h4>JSTAR Tab</h4>
-                                <p>Everyone deserves a beautiful browsing experience, a customizable new tab page that defines you.</p>
-                            </div>
-                        </div>
-                    <div class="about-content">
-                            <p id="extension-version">Version <span id="version-icon" class="version-icon"></span></p>
-                        <p>Homepage: <a href="https://github.com/DevJSTAR/JSTAR-Tab" target="_blank">GitHub Repository</a></p>
-                        <p>Latest Update: <a href="https://github.com/DevJSTAR/JSTAR-Tab/releases/latest" target="_blank">Check for updates</a></p>
-                        <p>License: <a href="https://github.com/DevJSTAR/JSTAR-Tab/blob/main/LICENSE" target="_blank">MIT License</a></p>
-                        <p class="made-with">Made with <i class="fas fa-heart"></i> by <a href="https://junaid.xyz" target="_blank">Junaid</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Add Shortcut Modal -->
-    <div id="add-shortcut-modal" class="modal hidden">
-        <div class="modal-backdrop"></div>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Add Shortcut</h2>
-                <button id="cancel-shortcut" class="btn-icon">
-                    <svg><use href="#icon-close"/></svg>
-                </button>
-            </div>
-            <div class="input-group">
-                <input type="text" id="shortcut-name" placeholder="Enter name">
-            </div>
-            <div class="input-group">
-                <input type="text" id="shortcut-url" placeholder="Enter URL (e.g., https://example.com)">
-            </div>
-            <button id="save-shortcut" class="btn-primary">Add Shortcut</button>
-        </div>
-    </div>
-
-    <!-- Edit Shortcut Modal -->
-    <div id="edit-shortcut-modal" class="modal hidden">
-        <div class="modal-backdrop"></div>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Edit Shortcut</h2>
-                <button id="close-edit-shortcut" class="btn-icon">
-                    <svg><use href="#icon-close"/></svg>
-                </button>
-            </div>
-            <div class="input-group">
-                <input type="text" id="edit-shortcut-name" placeholder="Enter name">
-            </div>
-            <div class="input-group">
-                <input type="text" id="edit-shortcut-url" placeholder="Enter URL">
-            </div>
-            <div class="modal-actions">
-                <button id="save-edit-shortcut" class="btn-primary">Save</button>
-                <button id="cancel-edit-shortcut" class="btn-primary">Cancel</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Confirmation Dialog -->
-    <div id="confirmation-dialog" class="modal hidden">
-        <div class="modal-backdrop"></div>
-        <div class="modal-content confirmation-dialog">
-            <div class="confirmation-icon">
-                <svg><use href="#icon-alert-triangle"/></svg>
-            </div>
-            <div class="confirmation-content">
-                <h3 id="confirmation-title">Confirm Action</h3>
-                <p id="confirmation-message">Are you sure you want to proceed with this action?</p>
-            </div>
-            <div class="modal-actions">
-                <button id="confirm-action" class="btn-primary btn-danger">Confirm</button>
-                <button id="cancel-action" class="btn-primary">Cancel</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Password Dialog -->
-    <div id="password-dialog" class="modal hidden">
-        <div class="modal-backdrop"></div>
-        <div class="modal-content confirmation-dialog">
-            <div class="confirmation-icon lock-icon">
-                <svg><use href="#icon-lock"/></svg>
-            </div>
-            <div class="confirmation-content">
-                <h3>Password Required</h3>
-                <p>This shortcut is password protected. Please enter the password to continue.</p>
-                <div class="secrecy-note">
-                    <img src="images/secrecy.png" alt="Secrecy">
-                    <div>
-                        Try <a href="https://github.com/DevJSTAR/Secrecy/releases/latest" target="_blank">Secrecy</a> for full browser password protection. 
-                        JSTAR Tab only protects shortcuts within this page.
-                    </div>
-                </div>
-                <div class="password-input-container">
-                    <input type="password" id="shortcut-password" placeholder="Enter password">
-                </div>
-                <div id="password-error" class="password-error hidden">Incorrect password. Please try again.</div>
-            </div>
-            <div class="modal-actions">
-                <button id="submit-password" class="btn-primary">Submit</button>
-                <button id="cancel-password" class="btn-primary">Cancel</button>
-            </div>
-            <button id="close-password-dialog" class="dialog-close">
-                <svg><use href="#icon-close"/></svg>
+    <div id="main-content" class="hidden">
+      <div class="center-container">
+        <div id="greeting"></div>
+        <div id="search-container" class="search-container">
+          <div class="search-wrapper">
+            <input type="text" id="search-bar" placeholder="Search the web" />
+            <button id="search-button" class="search-icon">
+              <svg width="24" height="24">
+                <use href="icons.svg#search"></use>
+              </svg>
             </button>
+          </div>
         </div>
+        <div class="shortcuts-container">
+          <div id="shortcuts-grid"></div>
+          <button id="add-shortcut" class="btn-primary">
+            <svg width="24" height="24"><use href="icons.svg#plus"></use></svg>
+          </button>
+        </div>
+      </div>
+
+      <button id="settings-button" class="settings-button">
+        <svg width="24" height="24"><use href="icons.svg#settings"></use></svg>
+      </button>
     </div>
 
-    <!-- Notification Container -->
+    <div id="settings-page" class="settings-page hidden">
+      <div class="settings-container">
+        <div class="settings-sidebar">
+          <div class="settings-sidebar-header">
+            <button id="back-to-home" class="btn-icon">
+              <svg width="24" height="24">
+                <use href="icons.svg#back"></use>
+              </svg>
+            </button>
+            <h2>Settings</h2>
+          </div>
+          <nav class="settings-nav">
+            <a
+              href="#personalization"
+              class="settings-nav-item active"
+              data-section="personalization"
+            >
+              <svg width="24" height="24">
+                <use href="icons.svg#user"></use>
+              </svg>
+              <span>Personalization</span>
+            </a>
+            <a
+              href="#appearance"
+              class="settings-nav-item"
+              data-section="appearance"
+            >
+              <svg width="24" height="24">
+                <use href="icons.svg#sparkle"></use>
+              </svg>
+              <span>Appearance</span>
+            </a>
+            <a href="#privacy" class="settings-nav-item" data-section="privacy">
+              <svg width="24" height="24">
+                <use href="icons.svg#lock"></use>
+              </svg>
+              <span>Privacy</span>
+            </a>
+            <a href="#search" class="settings-nav-item" data-section="search">
+              <svg width="24" height="24">
+                <use href="icons.svg#search"></use>
+              </svg>
+              <span>Search</span>
+            </a>
+            <a
+              href="#shortcuts"
+              class="settings-nav-item"
+              data-section="shortcuts"
+            >
+              <svg width="24" height="24">
+                <use href="icons.svg#command"></use>
+              </svg>
+              <span>Shortcuts</span>
+            </a>
+            <a
+              href="#backgrounds"
+              class="settings-nav-item"
+              data-section="backgrounds"
+            >
+              <svg width="24" height="24">
+                <use href="icons.svg#image"></use>
+              </svg>
+              <span>Backgrounds</span>
+            </a>
+            <a href="#data" class="settings-nav-item" data-section="data">
+              <svg width="24" height="24">
+                <use href="icons.svg#database"></use>
+              </svg>
+              <span>Data Management</span>
+            </a>
+            <a href="#about" class="settings-nav-item" data-section="about">
+              <svg width="24" height="24">
+                <use href="icons.svg#info"></use>
+              </svg>
+              <span>About</span>
+            </a>
+          </nav>
+        </div>
+        <div class="settings-content">
+          <div id="personalization" class="settings-section active">
+            <h3>Personalization</h3>
+            <div class="settings-card">
+              <div class="settings-card-header">
+                <div class="settings-card-icon">
+                  <svg width="24" height="24">
+                    <use href="icons.svg#user"></use>
+                  </svg>
+                </div>
+                <div class="settings-card-title">
+                  <h4>Profile Settings</h4>
+                  <p>Customize how you appear and interact with JSTAR Tab</p>
+                </div>
+              </div>
+              <div class="setting-item">
+                <div class="setting-label">Display Name</div>
+                <div class="setting-description">
+                  This name will be used in your greeting message
+                </div>
+                <input
+                  class="setting-input"
+                  type="text"
+                  id="settings-name"
+                  placeholder="Enter your name"
+                />
+              </div>
+            </div>
+
+            <div class="settings-card">
+              <div class="settings-card-header">
+                <div class="settings-card-icon">
+                  <svg width="24" height="24">
+                    <use href="icons.svg#chat"></use>
+                  </svg>
+                </div>
+                <div class="settings-card-title">
+                  <h4>Greeting Customization</h4>
+                  <p>Personalize your welcome message</p>
+                </div>
+              </div>
+              <div class="setting-item">
+                <div class="setting-label">Custom Greeting</div>
+                <div class="setting-description">
+                  Create your own greeting format using the available variables
+                </div>
+                <input
+                  class="setting-input"
+                  type="text"
+                  id="custom-greeting"
+                  placeholder="Enter custom greeting"
+                />
+                <span class="format-hint"
+                  >Available variables: {name}, {greeting}, {time}, {date},
+                  {day}, {month}, {year}</span
+                >
+              </div>
+              <div class="setting-item">
+                <div class="setting-label">Greeting Color</div>
+                <div class="setting-description">
+                  Choose how the greeting text color is determined
+                </div>
+                <div class="custom-select">
+                  <select id="greeting-color-select">
+                    <option value="default">Default</option>
+                    <option value="smart">Smart (adjusts for contrast)</option>
+                    <option value="custom">Custom</option>
+                  </select>
+                </div>
+              </div>
+              <div
+                class="setting-item horizontal hidden"
+                id="custom-greeting-color-setting"
+              >
+                <div>
+                  <div class="setting-label">Custom Greeting Color</div>
+                  <div class="setting-description">
+                    Set a specific color for your greeting text
+                  </div>
+                </div>
+                <div class="color-setting greeting">
+                  <input
+                    type="color"
+                    id="custom-greeting-color"
+                    value="#FFFFFF"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="settings-card">
+              <div class="settings-card-header">
+                <div class="settings-card-icon">
+                  <svg width="24" height="24">
+                    <use href="icons.svg#bell"></use>
+                  </svg>
+                </div>
+                <div class="settings-card-title">
+                  <h4>Notifications</h4>
+                  <p>Configure update notifications and alerts</p>
+                </div>
+              </div>
+              <div class="setting-item horizontal">
+                <div>
+                  <div class="setting-label">Update Alerts</div>
+                  <div class="setting-description">
+                    Get notified when new updates are available
+                  </div>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" id="toggle-update-alerts" checked />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div id="appearance" class="settings-section">
+            <h3>Appearance</h3>
+            <div class="settings-card">
+              <div class="settings-card-header">
+                <div class="settings-card-icon">
+                  <svg width="24" height="24">
+                    <use href="icons.svg#sparkle"></use>
+                  </svg>
+                </div>
+                <div class="settings-card-title">
+                  <h4>Theme Settings</h4>
+                  <p>Customize the look and feel of JSTAR Tab</p>
+                </div>
+              </div>
+              <div class="setting-item horizontal">
+                <div>
+                  <div class="setting-label">Theme</div>
+                  <div class="setting-description">
+                    Switch between light and dark mode
+                  </div>
+                </div>
+                <button id="toggle-theme" class="btn-icon">
+                  <svg width="24" height="24">
+                    <use href="icons.svg#sun"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="setting-item">
+                <div class="setting-label">Motion Preference</div>
+                <div class="setting-description">
+                  Control how animations and transitions appear
+                </div>
+                <div class="custom-select">
+                  <select id="motion-preference-select">
+                    <option value="default">Default Animations</option>
+                    <option value="subtle">Subtle Animations</option>
+                    <option value="reduced">Reduced Motion</option>
+                    <option value="minimal">Minimal Motion</option>
+                    <option value="disabled">No Animations</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="settings-card">
+              <div class="settings-card-header">
+                <div class="settings-card-icon">
+                  <svg width="24" height="24">
+                    <use href="icons.svg#text"></use>
+                  </svg>
+                </div>
+                <div class="settings-card-title">
+                  <h4>Typography</h4>
+                  <p>Customize fonts and text sizes</p>
+                </div>
+                <button id="reset-font-size" class="btn-reset">
+                  Reset to Default
+                </button>
+              </div>
+              <div class="setting-item">
+                <div class="setting-label">Font Family</div>
+                <div class="setting-description">
+                  Choose your preferred font for the interface
+                </div>
+                <div class="custom-select">
+                  <select id="font-family-select">
+                    <option value="Inter" style="font-family: Inter">
+                      Inter
+                    </option>
+                    <option value="Poppins" style="font-family: Poppins">
+                      Poppins
+                    </option>
+                    <option value="Roboto" style="font-family: Roboto">
+                      Roboto
+                    </option>
+                    <option value="Montserrat" style="font-family: Montserrat">
+                      Montserrat
+                    </option>
+                    <option value="Quicksand" style="font-family: Quicksand">
+                      Quicksand
+                    </option>
+                    <option
+                      value="Comic Sans MS"
+                      style="font-family: &quot;Comic Sans MS&quot;, cursive"
+                    >
+                      Comic Sans MS
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="setting-item">
+                <div class="setting-label">Font Size</div>
+                <div class="setting-description">
+                  Adjust the size of text throughout the interface
+                </div>
+                <div class="font-size-control">
+                  <div class="slider-container">
+                    <input
+                      class="slider"
+                      type="range"
+                      id="font-size-slider"
+                      min="8"
+                      max="36"
+                      step="1"
+                    />
+                  </div>
+                  <div class="font-size-input">
+                    <input
+                      class="setting-input"
+                      type="number"
+                      id="font-size-number"
+                      min="8"
+                      max="36"
+                    />
+                    <span>px</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="settings-card">
+              <div class="settings-card-header">
+                <div class="settings-card-icon">
+                  <svg width="24" height="24">
+                    <use href="icons.svg#layout"></use>
+                  </svg>
+                </div>
+                <div class="settings-card-title">
+                  <h4>Layout Settings</h4>
+                  <p>
+                    Configure which elements are visible on your new tab page
+                  </p>
+                </div>
+                <button class="btn-reset" id="reset-layout">
+                  Reset to Default
+                </button>
+              </div>
+              <div class="setting-item horizontal">
+                <div>
+                  <div class="setting-label">Show Greeting</div>
+                  <div class="setting-description">
+                    Display the welcome message
+                  </div>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" id="toggle-greeting" checked />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="setting-item horizontal">
+                <div>
+                  <div class="setting-label">Show Search Bar</div>
+                  <div class="setting-description">
+                    Display the search bar for quick web searches
+                  </div>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" id="toggle-search" checked />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="setting-item horizontal">
+                <div>
+                  <div class="setting-label">Show Shortcuts</div>
+                  <div class="setting-description">
+                    Display your favorite website shortcuts
+                  </div>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" id="toggle-shortcuts" checked />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="setting-item horizontal">
+                <div>
+                  <div class="setting-label">Show Add Shortcut Button</div>
+                  <div class="setting-description">
+                    Display the button to add new shortcuts
+                  </div>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" id="toggle-add-shortcut" checked />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="setting-item">
+                <div class="setting-label">Grid Layout</div>
+                <div class="setting-description">
+                  Choose how your content is organized
+                </div>
+                <div class="custom-select">
+                  <select id="grid-layout-type">
+                    <option value="default">Default Grid</option>
+                    <option value="compact">Compact Grid</option>
+                    <option value="comfortable">Comfortable Grid</option>
+                    <option value="list">List View</option>
+                    <option value="custom">Custom Grid</option>
+                  </select>
+                </div>
+              </div>
+              <div id="custom-grid-settings" class="setting-item hidden">
+                <div class="setting-label">Custom Grid Settings</div>
+                <div class="setting-description">
+                  Customize your grid layout with specific dimensions
+                </div>
+                <div class="custom-grid-controls">
+                  <div class="grid-control">
+                    <label for="grid-columns">Columns</label>
+                    <input
+                      class="setting-input"
+                      type="number"
+                      id="grid-columns"
+                      min="1"
+                      max="12"
+                      value="5"
+                    />
+                  </div>
+                  <div class="grid-control">
+                    <label for="grid-gap">Spacing</label>
+                    <input
+                      class="setting-input"
+                      type="number"
+                      id="grid-gap"
+                      min="0"
+                      max="50"
+                      value="16"
+                    />
+                  </div>
+                  <div class="grid-control">
+                    <label for="grid-size">Item Size</label>
+                    <input
+                      class="setting-input"
+                      type="number"
+                      id="grid-size"
+                      min="40"
+                      max="200"
+                      value="80"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="setting-item horizontal hidden">
+                <div>
+                  <div class="setting-label">Resizable Items</div>
+                  <div class="setting-description">
+                    Allow items to be resized within the grid
+                  </div>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" id="toggle-resizable" />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="settings-card">
+              <div class="settings-card-header">
+                <div class="settings-card-icon">
+                  <svg width="24" height="24">
+                    <use href="icons.svg#sun"></use>
+                  </svg>
+                </div>
+                <div class="settings-card-title">
+                  <h4>Light Mode Colors</h4>
+                  <p>Customize the color scheme for light mode</p>
+                </div>
+                <button id="reset-light-colors" class="btn-reset">
+                  Reset to Default
+                </button>
+              </div>
+              <div id="light-mode-colors"></div>
+            </div>
+
+            <div class="settings-card">
+              <div class="settings-card-header">
+                <div class="settings-card-icon">
+                  <svg width="24" height="24">
+                    <use href="icons.svg#moon"></use>
+                  </svg>
+                </div>
+                <div class="settings-card-title">
+                  <h4>Dark Mode Colors</h4>
+                  <p>Customize the color scheme for dark mode</p>
+                </div>
+                <button id="reset-dark-colors" class="btn-reset">
+                  Reset to Default
+                </button>
+              </div>
+              <div id="dark-mode-colors"></div>
+            </div>
+          </div>
+
+          <div id="search" class="settings-section">
+            <h3>Search</h3>
+            <div class="settings-card">
+              <div class="settings-card-header">
+                <div class="settings-card-icon">
+                  <svg width="24" height="24">
+                    <use href="icons.svg#search"></use>
+                  </svg>
+                </div>
+                <div class="settings-card-title">
+                  <h4>Search Engine</h4>
+                  <p>Choose your preferred search engine for the search bar</p>
+                </div>
+              </div>
+              <div class="setting-item">
+                <div class="setting-label">Default Search Engine</div>
+                <div class="setting-description">
+                  Select which search engine to use when searching from the new
+                  tab page
+                </div>
+                <div class="custom-select">
+                  <select id="search-engine-select">
+                    <option value="google" class="search-engine-google">
+                      Google
+                    </option>
+                    <option value="bing" class="search-engine-bing">
+                      Bing
+                    </option>
+                    <option value="duckduckgo" class="search-engine-duckduckgo">
+                      DuckDuckGo
+                    </option>
+                    <option value="brave" class="search-engine-brave">
+                      Brave
+                    </option>
+                    <option value="perplexity" class="search-engine-perplexity">
+                      Perplexity AI
+                    </option>
+                    <option value="searxng" class="search-engine-searxng">
+                      SearXNG
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="shortcuts" class="settings-section">
+            <h3>Keyboard Shortcuts</h3>
+            <div class="settings-card">
+              <div class="settings-card-header">
+                <div class="settings-card-icon">
+                  <svg width="24" height="24">
+                    <use href="icons.svg#command"></use>
+                  </svg>
+                </div>
+                <div class="settings-card-title">
+                  <h4>Shortcut Settings</h4>
+                  <p>Manage your keyboard shortcuts for quick access</p>
+                </div>
+              </div>
+              <div class="setting-item">
+                <div class="setting-label">Settings Menu</div>
+                <div class="keybind-container">
+                  <input
+                    class="setting-input"
+                    type="text"
+                    id="keybind-settings"
+                    placeholder="Press keys..."
+                    readonly
+                  />
+                  <button class="clear-keybind" data-for="settings">×</button>
+                </div>
+              </div>
+              <div class="setting-item">
+                <div class="setting-label">Toggle Anonymous Mode</div>
+                <div class="keybind-container">
+                  <input
+                    class="setting-input"
+                    type="text"
+                    id="keybind-anonymous"
+                    placeholder="Press keys..."
+                    readonly
+                  />
+                  <button class="clear-keybind" data-for="anonymous">×</button>
+                </div>
+              </div>
+              <div class="setting-item">
+                <div class="setting-label">Toggle Theme</div>
+                <div class="keybind-container">
+                  <input
+                    class="setting-input"
+                    type="text"
+                    id="keybind-theme"
+                    placeholder="Press keys..."
+                    readonly
+                  />
+                  <button class="clear-keybind" data-for="theme">×</button>
+                </div>
+              </div>
+              <div class="setting-item">
+                <div class="setting-label">Quick URL</div>
+                <div class="keybind-container">
+                  <input
+                    class="setting-input"
+                    type="text"
+                    id="keybind-url-combo"
+                    placeholder="Press keys..."
+                    readonly
+                  />
+                  <button class="clear-keybind" data-for="url">×</button>
+                </div>
+                <input
+                  class="setting-input"
+                  type="text"
+                  id="keybind-url"
+                  placeholder="Enter URL"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div id="privacy" class="settings-section">
+            <h3>Privacy</h3>
+            <div class="secrecy-note">
+              <img src="images/secrecy.png" alt="Secrecy" />
+              <div>
+                Try
+                <a
+                  href="https://github.com/jstar404/Secrecy/releases/latest"
+                  target="_blank"
+                  >Secrecy</a
+                >
+                for full browser password protection. JSTAR Tab only protects
+                shortcuts within this page.
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card-header">
+                <div class="settings-card-icon">
+                  <svg width="24" height="24">
+                    <use href="icons.svg#lock"></use>
+                  </svg>
+                </div>
+                <div class="settings-card-title">
+                  <h4>Privacy Settings</h4>
+                  <p>Control privacy and security features</p>
+                </div>
+              </div>
+              <div class="setting-item horizontal">
+                <div>
+                  <div class="setting-label">Anonymous Mode</div>
+                  <div class="setting-description">
+                    Enhance privacy with customizable protection options
+                  </div>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" id="toggle-anonymous" />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+
+              <div id="anonymous-options" class="nested-settings hidden">
+                <div class="setting-item horizontal">
+                  <div>
+                    <div class="setting-label">Hide Name</div>
+                    <div class="setting-description">
+                      Use a randomly generated name
+                    </div>
+                  </div>
+                  <label class="toggle">
+                    <input type="checkbox" id="anonymous-hide-name" checked />
+                    <span class="toggle-slider"></span>
+                  </label>
+                </div>
+
+                <div class="setting-item horizontal">
+                  <div>
+                    <div class="setting-label">Blur Shortcuts</div>
+                    <div class="setting-description">
+                      Obscure your shortcut icons and names
+                    </div>
+                  </div>
+                  <label class="toggle">
+                    <input
+                      type="checkbox"
+                      id="anonymous-blur-shortcuts"
+                      checked
+                    />
+                    <span class="toggle-slider"></span>
+                  </label>
+                </div>
+
+                <div class="setting-item horizontal">
+                  <div>
+                    <div class="setting-label">Incognito Search</div>
+                    <div class="setting-description">
+                      Don't save searches made in anonymous mode
+                    </div>
+                  </div>
+                  <label class="toggle">
+                    <input
+                      type="checkbox"
+                      id="anonymous-incognito-search"
+                      checked
+                    />
+                    <span class="toggle-slider"></span>
+                  </label>
+                </div>
+
+                <div class="setting-item horizontal">
+                  <div>
+                    <div class="setting-label">Show Warning</div>
+                    <div class="setting-description">
+                      Display a reminder when anonymous mode is active
+                    </div>
+                  </div>
+                  <label class="toggle">
+                    <input
+                      type="checkbox"
+                      id="anonymous-show-warning"
+                      checked
+                    />
+                    <span class="toggle-slider"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="setting-item horizontal">
+                <div>
+                  <div class="setting-label">Password Protected Shortcuts</div>
+                  <div class="setting-description">
+                    Add password protection to specific shortcuts
+                  </div>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" id="toggle-shortcuts-password" />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="setting-item horizontal">
+                <div>
+                  <div class="setting-label">Hide Lock Icons</div>
+                  <div class="setting-description">
+                    Hide the lock icon on password protected shortcuts
+                  </div>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" id="toggle-hide-lock-icon" />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div
+                id="password-protection-settings"
+                class="setting-item hidden"
+              >
+                <div class="setting-label">Master Password</div>
+                <div class="setting-description">
+                  Set a master password for your protected shortcuts
+                </div>
+                <div class="input-group">
+                  <input
+                    class="setting-input"
+                    type="password"
+                    id="master-password"
+                    placeholder="Enter master password"
+                  />
+                </div>
+                <button id="save-master-password" class="btn-primary">
+                  Save Password
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div id="backgrounds" class="settings-section">
+            <h3>Backgrounds</h3>
+            <div class="settings-card">
+              <div class="settings-card-header">
+                <div class="settings-card-icon">
+                  <svg width="24" height="24">
+                    <use href="icons.svg#image"></use>
+                  </svg>
+                </div>
+                <div class="settings-card-title">
+                  <h4>Custom Background</h4>
+                  <p>Personalize your new tab page with custom backgrounds</p>
+                </div>
+              </div>
+              <div class="background-preview-grid" id="background-preview-grid">
+                <div class="background-preview empty" id="default-background">
+                  <svg width="24" height="24">
+                    <use href="icons.svg#close"></use>
+                  </svg>
+                </div>
+              </div>
+              <label for="background-upload" class="file-input-label"
+                >Upload New Background</label
+              >
+              <input
+                type="file"
+                id="background-upload"
+                accept="image/*"
+                class="file-input"
+              />
+            </div>
+          </div>
+
+          <div id="data" class="settings-section">
+            <h3>Data Management</h3>
+            <div class="settings-card">
+              <div class="settings-card-header">
+                <div class="settings-card-icon">
+                  <svg width="24" height="24">
+                    <use href="icons.svg#database"></use>
+                  </svg>
+                </div>
+                <div class="settings-card-title">
+                  <h4>Backup & Restore</h4>
+                  <p>Manage your JSTAR Tab data and settings</p>
+                </div>
+              </div>
+              <div class="setting-item">
+                <div class="setting-description">
+                  Export your settings, shortcuts, and customizations to a file,
+                  or restore them from a previous backup.
+                </div>
+                <div class="data-management-buttons">
+                  <button id="import-data" class="btn-primary">
+                    <svg width="24" height="24">
+                      <use href="icons.svg#import"></use>
+                    </svg>
+                    Import Data
+                  </button>
+                  <button id="export-data" class="btn-primary">
+                    <svg width="24" height="24">
+                      <use href="icons.svg#export"></use>
+                    </svg>
+                    Export Data
+                  </button>
+                  <button id="reset-data" class="btn-primary btn-danger">
+                    <svg width="24" height="24">
+                      <use href="icons.svg#delete"></use>
+                    </svg>
+                    Reset All Data
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="settings-card">
+              <div class="settings-card-header">
+                <div class="settings-card-icon">
+                  <svg width="24" height="24">
+                    <use href="icons.svg#info"></use>
+                  </svg>
+                </div>
+                <div class="settings-card-title">
+                  <h4>Update Information</h4>
+                  <p>How to update JSTAR Tab while keeping your settings</p>
+                </div>
+              </div>
+              <div id="update-info-content" class="update-info-content"></div>
+            </div>
+          </div>
+
+          <div id="about" class="settings-section">
+            <h3>About</h3>
+            <div class="settings-card">
+              <div class="settings-card-header">
+                <div class="about-logo">
+                  <img
+                    id="logoImage"
+                    src="images/icon48-black.png"
+                    alt="JSTAR Tab Logo"
+                  />
+                </div>
+                <div class="settings-card-title">
+                  <h4>JSTAR Tab</h4>
+                  <p>
+                    Everyone deserves a beautiful browsing experience, a
+                    customizable new tab page that defines you.
+                  </p>
+                </div>
+              </div>
+              <div class="about-content">
+                <p id="extension-version">
+                  Version <span id="version-icon" class="version-icon"></span>
+                </p>
+                <p>
+                  Official Website:
+                  <a href="https://jstartab.vercel.app" target="_blank"
+                    >Visit
+                    <svg
+                      style="width: 18px !important; height: 18px !important"
+                    >
+                      <use href="icons.svg#external-link"></use></svg
+                  ></a>
+                </p>
+                <p>
+                  Changelog:
+                  <a
+                    href="https://jstartab.vercel.app/changelog"
+                    target="_blank"
+                    >Visit
+                    <svg
+                      style="width: 18px !important; height: 18px !important"
+                    >
+                      <use href="icons.svg#external-link"></use></svg
+                  ></a>
+                </p>
+                <p>
+                  License:
+                  <a
+                    href="https://github.com/jstar404/JSTAR-Tab/blob/main/LICENSE"
+                    target="_blank"
+                    >MIT License
+                    <svg
+                      style="width: 18px !important; height: 18px !important"
+                    >
+                      <use href="icons.svg#external-link"></use></svg
+                  ></a>
+                </p>
+                <p class="made-with">
+                  Made with <i class="fas fa-heart"></i> by
+                  <a href="https://junaidweb.vercel.app" target="_blank"
+                    >Junaid</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="whats-new-modal" class="modal hidden">
+      <div class="modal-backdrop no-close"></div>
+      <div class="modal-content whats-new-dialog">
+        <div class="whats-new-accent-bar"></div>
+        <div class="whats-new-inner">
+          <div class="whats-new-top">
+            <div class="whats-new-pill">
+              <svg width="14" height="14">
+                <use href="icons.svg#sparkle"></use>
+              </svg>
+              New Update
+            </div>
+            <div class="whats-new-version-row">
+              <span class="whats-new-app-name">JSTAR Tab</span>
+              <span class="whats-new-version-tag" id="whats-new-version-title"
+                >v3.2.5</span
+              >
+            </div>
+            <p class="whats-new-subtitle">
+              Here's what just landed in your browser.
+            </p>
+          </div>
+
+          <div class="whats-new-divider"></div>
+
+          <div class="whats-new-features">
+            <div class="wn-feature">
+              <div class="wn-feature-icon">
+                <svg width="20" height="20">
+                  <use href="icons.svg#database"></use>
+                </svg>
+              </div>
+              <div class="wn-feature-text">
+                <h3>Engine Overhaul</h3>
+                <p>
+                  The backgrounds system has been rebuilt from scratch for
+                  faster loading, better compression, and support for
+                  high-quality images.
+                </p>
+              </div>
+            </div>
+
+            <div class="wn-feature">
+              <div class="wn-feature-icon">
+                <svg width="20" height="20">
+                  <use href="icons.svg#command"></use>
+                </svg>
+              </div>
+              <div class="wn-feature-text">
+                <h3>Offline Font Caching</h3>
+                <p>
+                  Fonts are now cached via service workers, ensuring your
+                  personalized typography works perfectly without an internet
+                  connection.
+                </p>
+              </div>
+            </div>
+
+            <div class="wn-feature">
+              <div class="wn-feature-icon">
+                <svg width="20" height="20">
+                  <use href="icons.svg#export"></use>
+                </svg>
+              </div>
+              <div class="wn-feature-text">
+                <h3>Selective Export</h3>
+                <p>
+                  Total control over your data. Choose exactly which categories
+                  to backup, from Personalization to Privacy settings.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="whats-new-actions">
+            <button id="close-whats-new" class="wn-cta-btn">
+              Let's go!
+              <svg width="18" height="18">
+                <use href="icons.svg#rocket"></use>
+              </svg>
+            </button>
+            <a
+              id="whats-new-changelog-btn"
+              href="#"
+              target="_blank"
+              class="wn-secondary-btn"
+            >
+              View full changelog&nbsp;
+              <svg width="14" height="14">
+                <use href="icons.svg#external-link"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="add-shortcut-modal" class="modal hidden">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content add-shortcut-dialog">
+        <div class="add-shortcut-modal-content">
+          <h3 style="align-items: left !important; text-align: left !important">
+            Add Shortcut
+          </h3>
+          <div class="add-shortcut-input-container">
+            <input type="text" id="shortcut-name" placeholder="Enter name" />
+          </div>
+          <div id="shortcut-name-error" class="shortcut-name-error hidden">
+            Shortcut name is required.
+          </div>
+          <div class="add-shortcut-input-container">
+            <input
+              type="text"
+              id="shortcut-url"
+              placeholder="Enter URL (e.g., https://example.com)"
+            />
+          </div>
+          <div id="shortcut-url-error" class="shortcut-url-error hidden">
+            Shortcut URL is required.
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button id="save-shortcut" class="btn-primary">Add Shortcut</button>
+        </div>
+        <button id="cancel-shortcut" class="dialog-close">
+          <svg width="24" height="24"><use href="icons.svg#close"></use></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="edit-shortcut-modal" class="modal hidden">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content edit-shortcut-dialog">
+        <div class="edit-shortcut-modal-content">
+          <h3 style="align-items: left !important; text-align: left !important">
+            Edit Shortcut
+          </h3>
+          <div class="edit-shortcut-input-container">
+            <input
+              type="text"
+              id="edit-shortcut-name"
+              placeholder="Enter name"
+            />
+          </div>
+          <div
+            id="edit-shortcut-name-error"
+            class="edit-shortcut-name-error hidden"
+          >
+            Shortcut name is required.
+          </div>
+          <div class="edit-shortcut-input-container">
+            <input
+              type="text"
+              id="edit-shortcut-url"
+              placeholder="Enter URL (e.g., https://example.com)"
+            />
+          </div>
+          <div
+            id="edit-shortcut-url-error"
+            class="edit-shortcut-url-error hidden"
+          >
+            Shortcut URL is required.
+          </div>
+          <div class="modal-actions">
+            <button id="save-edit-shortcut" class="btn-primary">Save</button>
+            <button id="cancel-edit-shortcut" class="btn-secondary">
+              Cancel
+            </button>
+          </div>
+          <button id="close-edit-shortcut" class="dialog-close">
+            <svg width="24" height="24"><use href="icons.svg#close"></use></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="confirmation-dialog" class="modal hidden">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content confirmation-dialog">
+        <div class="confirmation-icon">
+          <svg width="24" height="24"><use href="icons.svg#alert"></use></svg>
+        </div>
+        <div class="confirmation-content">
+          <h3 id="confirmation-title">Confirm Action</h3>
+          <p id="confirmation-message">
+            Are you sure you want to proceed with this action?
+          </p>
+        </div>
+        <div class="modal-actions">
+          <button id="confirm-action" class="btn-primary btn-danger">
+            Confirm
+          </button>
+          <button id="cancel-action" class="btn-primary">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="password-dialog" class="modal hidden">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content confirmation-dialog">
+        <div class="confirmation-icon lock-icon">
+          <svg width="24" height="24"><use href="icons.svg#lock"></use></svg>
+        </div>
+        <div class="confirmation-content">
+          <h3>Password Required</h3>
+          <p>
+            This shortcut is password protected. Please enter the password to
+            continue.
+          </p>
+          <div class="password-input-container">
+            <input
+              type="password"
+              id="shortcut-password"
+              placeholder="Enter password"
+            />
+          </div>
+          <div id="password-error" class="password-error hidden">
+            Incorrect password. Please try again.
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button id="submit-password" class="btn-primary">Submit</button>
+          <button id="cancel-password" class="btn-primary">Cancel</button>
+        </div>
+        <button id="close-password-dialog" class="dialog-close">
+          <svg width="24" height="24"><use href="icons.svg#close"></use></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="export-data-modal" class="modal hidden">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Export Data</h3>
+          <button id="close-export-modal" class="dialog-close">
+            <svg width="24" height="24"><use href="icons.svg#close"></use></svg>
+          </button>
+        </div>
+        <div class="modal-description">
+          <p>
+            Select which data categories you want to include in your backup
+            file:
+          </p>
+        </div>
+        <div class="export-options">
+          <div class="setting-item horizontal export-option">
+            <div class="export-option-info">
+              <div class="export-option-icon">
+                <svg width="24" height="24">
+                  <use href="icons.svg#user"></use>
+                </svg>
+              </div>
+              <div>
+                <div class="setting-label">Personalization</div>
+                <div class="setting-description">
+                  Name, greeting, and notification settings
+                </div>
+              </div>
+            </div>
+            <label class="toggle">
+              <input type="checkbox" id="export-personalization" checked />
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-item horizontal export-option">
+            <div class="export-option-info">
+              <div class="export-option-icon">
+                <svg width="24" height="24">
+                  <use href="icons.svg#sparkle"></use>
+                </svg>
+              </div>
+              <div>
+                <div class="setting-label">Appearance</div>
+                <div class="setting-description">
+                  Theme, colors, fonts, and layout
+                </div>
+              </div>
+            </div>
+            <label class="toggle">
+              <input type="checkbox" id="export-appearance" checked />
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-item horizontal export-option">
+            <div class="export-option-info">
+              <div class="export-option-icon">
+                <svg width="24" height="24">
+                  <use href="icons.svg#lock"></use>
+                </svg>
+              </div>
+              <div>
+                <div class="setting-label">Privacy</div>
+                <div class="setting-description">
+                  Anonymous mode and password protection
+                </div>
+              </div>
+            </div>
+            <label class="toggle">
+              <input type="checkbox" id="export-privacy" checked />
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-item horizontal export-option">
+            <div class="export-option-info">
+              <div class="export-option-icon">
+                <svg width="24" height="24">
+                  <use href="icons.svg#search"></use>
+                </svg>
+              </div>
+              <div>
+                <div class="setting-label">Search</div>
+                <div class="setting-description">Search engine preferences</div>
+              </div>
+            </div>
+            <label class="toggle">
+              <input type="checkbox" id="export-search" checked />
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-item horizontal export-option">
+            <div class="export-option-info">
+              <div class="export-option-icon">
+                <svg width="24" height="24">
+                  <use href="icons.svg#command"></use>
+                </svg>
+              </div>
+              <div>
+                <div class="setting-label">Shortcuts</div>
+                <div class="setting-description">
+                  Your website shortcuts and keybinds
+                </div>
+              </div>
+            </div>
+            <label class="toggle">
+              <input type="checkbox" id="export-shortcuts" checked />
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-item horizontal export-option">
+            <div class="export-option-info">
+              <div class="export-option-icon">
+                <svg width="24" height="24">
+                  <use href="icons.svg#image"></use>
+                </svg>
+              </div>
+              <div>
+                <div class="setting-label">Backgrounds</div>
+                <div class="setting-description">
+                  Custom backgrounds and settings
+                </div>
+              </div>
+            </div>
+            <label class="toggle">
+              <input type="checkbox" id="export-backgrounds" checked />
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button id="confirm-export" class="btn-primary">
+            <svg width="24" height="24">
+              <use href="icons.svg#export"></use>
+            </svg>
+            Export
+          </button>
+          <button id="cancel-export" class="btn-secondary">Cancel</button>
+        </div>
+      </div>
+    </div>
+
     <div id="notification-container"></div>
 
-    <!-- Context Menu -->
     <div id="context-menu" class="context-menu hidden">
-        <div class="context-menu-item" data-action="open-new-tab">
-            <svg><use href="#icon-external-link"/></svg> Open in New Tab
-        </div>
-        <div class="context-menu-item" data-action="edit">
-            <svg><use href="#icon-edit"/></svg> Edit
-        </div>
-        <div class="context-menu-item" data-action="delete">
-            <svg><use href="#icon-delete"/></svg> Delete
-        </div>
+      <div class="context-menu-item" data-action="open-new-tab">
+        <svg width="24" height="24">
+          <use href="icons.svg#external-link"></use>
+        </svg>
+        Open in New Tab
+      </div>
+      <div class="context-menu-item" data-action="edit">
+        <svg width="24" height="24"><use href="icons.svg#edit"></use></svg> Edit
+      </div>
+      <div class="context-menu-item" data-action="delete">
+        <svg width="24" height="24"><use href="icons.svg#delete"></use></svg>
+        Delete
+      </div>
     </div>
-
-    <!-- SVG Definitions (Linear Icons) -->
-    <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
-        <!-- Arrow Left Icon -->
-        <symbol id="icon-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="19" y1="12" x2="5" y2="12"/>
-            <polyline points="12 19 5 12 12 5"/>
-        </symbol>
-        
-        <!-- Image/Background Icon -->
-        <symbol id="icon-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <polyline points="21 15 16 10 5 21"/>
-        </symbol>
-
-        <!-- Theme/Appearance Icon -->
-        <symbol id="icon-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <circle cx="12" cy="12" r="4"/>
-            <line x1="21.17" y1="8" x2="12" y2="8"/>
-            <line x1="3.95" y1="6.06" x2="8.54" y2="14"/>
-            <line x1="10.88" y1="21.94" x2="15.46" y2="14"/>
-        </symbol>
-
-        <!-- Database Icon -->
-        <symbol id="icon-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <ellipse cx="12" cy="5" rx="9" ry="3"/>
-            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
-            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
-        </symbol>
-
-        <!-- Chevron Down Icon -->
-        <symbol id="icon-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"/>
-        </symbol>
-
-        <!-- External Link Icon -->
-        <symbol id="icon-external-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-            <polyline points="15 3 21 3 21 9"/>
-            <line x1="10" y1="14" x2="21" y2="3"/>
-        </symbol>
-
-        <!-- Edit Icon -->
-        <symbol id="icon-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
-            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
-        </symbol>
-
-        <!-- Delete Icon -->
-        <symbol id="icon-delete" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="3 6 5 6 21 6"/>
-            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
-            <line x1="10" y1="11" x2="10" y2="17"/>
-            <line x1="14" y1="11" x2="14" y2="17"/>
-        </symbol>
-
-        <!-- Search Icon -->
-        <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"/>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </symbol>
-
-        <!-- Plus Icon -->
-        <symbol id="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="12" y1="5" x2="12" y2="19"/>
-            <line x1="5" y1="12" x2="19" y2="12"/>
-        </symbol>
-
-        <!-- Settings Icon -->
-        <symbol id="icon-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="3"/>
-            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-        </symbol>
-
-        <!-- Import Icon -->
-        <symbol id="icon-import" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="7 10 12 15 17 10"/>
-            <line x1="12" y1="15" x2="12" y2="3"/>
-        </symbol>
-
-        <!-- Export Icon -->
-        <symbol id="icon-export" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="7 10 12 5 17 10"/>
-            <line x1="12" y1="5" x2="12" y2="15"/>
-        </symbol>
-
-        <!-- Light Mode (Sun) Icon -->
-        <symbol id="icon-light-mode" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"/>
-            <line x1="12" y1="1" x2="12" y2="3"/>
-            <line x1="12" y1="21" x2="12" y2="23"/>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-            <line x1="1" y1="12" x2="3" y2="12"/>
-            <line x1="21" y1="12" x2="23" y2="12"/>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-        </symbol>
-
-        <!-- Dark Mode (Moon) Icon -->
-        <symbol id="icon-dark-mode" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-        </symbol>
-
-        <!-- Close/X Icon -->
-        <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"/>
-            <line x1="6" y1="6" x2="18" y2="18"/>
-        </symbol>    
-
-        <!-- Message Icon -->
-        <symbol id="icon-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-        </symbol>
-
-        <!-- Layout Icon -->
-        <symbol id="icon-layout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-            <line x1="3" y1="9" x2="21" y2="9"/>
-            <line x1="9" y1="21" x2="9" y2="9"/>
-        </symbol>
-
-        <!-- Bell Icon -->
-        <symbol id="icon-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-        </symbol>
-
-        <!-- Info Icon -->
-        <symbol id="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="12" y1="16" x2="12" y2="12"/>
-            <line x1="12" y1="8" x2="12.01" y2="8"/>
-        </symbol>    
-
-        <!-- Paint Brush Icon -->
-        <symbol id="icon-paint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 3l1.88 5.79a2 2 0 0 0 1.33 1.33L21 12l-5.79 1.88a2 2 0 0 0-1.33 1.33L12 21l-1.88-5.79a2 2 0 0 0-1.33-1.33L3 12l5.79-1.88a2 2 0 0 0 1.33-1.33L12 3z"/>
-        </symbol>
-
-        <!-- Shortcuts Icon -->
-        <symbol id="icon-shortcuts" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
-        </symbol>    
-
-        <!-- Grid Icon -->
-        <symbol id="icon-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-            <line x1="3" y1="9" x2="21" y2="9"/>
-            <line x1="9" y1="21" x2="9" y2="9"/>
-        </symbol>
-
-        <!-- Alert Triangle Icon -->
-        <symbol id="icon-alert-triangle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-            <line x1="12" y1="9" x2="12" y2="13"/>
-            <line x1="12" y1="17" x2="12.01" y2="17"/>
-        </symbol>
-        
-        <!-- Lock Icon -->
-        <symbol id="icon-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-        </symbol>
-    </svg>
-
-    <!-- SVG Definitions (Solid Icons) -->
-    <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
-        <!-- Image/Background Icon Solid -->
-        <symbol id="icon-image-solid" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 12.5L8.5 12 5 17h14l-4.5-6-2.5 4.5z"/>
-            <circle fill="currentColor" cx="8.5" cy="8.5" r="1.5"/>
-        </symbol>
-
-        <!-- Theme/Appearance Icon Solid -->
-        <symbol id="icon-palette-solid" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-            <circle fill="currentColor" cx="12" cy="12" r="4"/>
-            <path fill="currentColor" d="M21.17 8h-9.17M3.95 6.06l4.59 7.94M10.88 21.94l4.58-7.94"/>
-        </symbol>
-
-        <!-- Database Icon Solid -->
-        <symbol id="icon-database-solid" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M12 2C6 2 3 3.34 3 5v14c0 1.66 3 3 9 3s9-1.34 9-3V5c0-1.66-3-3-9-3zm0 3c4.42 0 7 .84 7 1.5S16.42 8 12 8s-7-.84-7-1.5S7.58 5 12 5zm0 14c-4.42 0-7-.84-7-1.5V15c1.49.66 4.18 1 7 1s5.51-.34 7-1v2.5c0 .66-2.58 1.5-7 1.5zm0-6c-4.42 0-7-.84-7-1.5V9c1.49.66 4.18 1 7 1s5.51-.34 7-1v2.5c0 .66-2.58 1.5-7 1.5zm0-6c-4.42 0-7-.84-7-1.5V9c1.49.66 4.18 1 7 1s5.51-.34 7-1v2.5c0 .66-2.58 1.5-7 1.5z"/>
-        </symbol>
-
-        <!-- Chevron Down Icon Solid -->
-        <symbol id="icon-chevron-down-solid" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
-        </symbol>
-
-        <!-- External Link Icon Solid -->
-        <symbol id="icon-external-link-solid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-            <polyline points="15 3 21 3 21 9"/>
-            <line x1="10" y1="14" x2="21" y2="3"/>
-        </symbol>
-
-        <!-- Edit Icon Solid -->
-        <symbol id="icon-edit-solid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
-            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
-        </symbol>
-
-        <!-- Delete Icon Solid -->
-        <symbol id="icon-delete-solid" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M3 6h18v0h-18z"/>
-            <path fill="currentColor" d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
-            <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M10 11v6M14 11v6"/>
-        </symbol>
-
-        <!-- Import Icon Solid -->
-        <symbol id="icon-import-solid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="7 10 12 15 17 10"/>
-            <line x1="12" y1="15" x2="12" y2="3"/>
-        </symbol>
-
-        <!-- Export Icon Solid -->
-        <symbol id="icon-export-solid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="7 10 12 5 17 10"/>
-            <line x1="12" y1="5" x2="12" y2="15"/>
-        </symbol>
-
-        <!-- Search Icon Solid -->
-        <symbol id="icon-search-solid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"/>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </symbol>
-
-        <!-- Plus Icon Solid -->
-        <symbol id="icon-plus-solid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="12" y1="5" x2="12" y2="19"/>
-            <line x1="5" y1="12" x2="19" y2="12"/>
-        </symbol>
-
-        <!-- Settings Icon Solid -->
-        <symbol id="icon-settings-solid" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-            <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
-        </symbol>
-
-        <!-- Light Mode (Sun) Icon Solid -->
-        <symbol id="icon-light-mode-solid" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="5" fill="currentColor"/>
-            <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </symbol>
-
-        <!-- Dark Mode (Moon) Icon Solid -->
-        <symbol id="icon-dark-mode-solid" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-        </symbol>
-
-        <!-- Close/X Icon Solid -->
-        <symbol id="icon-close-solid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"/>
-            <line x1="6" y1="6" x2="18" y2="18"/>
-        </symbol>  
-
-        <!-- Message Icon Solid -->
-        <symbol id="icon-message-solid" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-        </symbol>
-
-        <!-- Layout Icon Solid -->
-        <symbol id="icon-layout-solid" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 6H9v12H5V5h14v4z"/>
-        </symbol>
-
-        <!-- Bell Icon Solid -->
-        <symbol id="icon-bell-solid" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9zm-4.27 13a2 2 0 0 1-3.46 0"/>
-        </symbol>
-
-        <!-- Sparkle Icon -->
-        <symbol id="icon-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 3l1.88 5.79a2 2 0 0 0 1.33 1.33L21 12l-5.79 1.88a2 2 0 0 0-1.33 1.33L12 21l-1.88-5.79a2 2 0 0 0-1.33-1.33L3 12l5.79-1.88a2 2 0 0 0 1.33-1.33L12 3z"/>
-        </symbol>
-
-        <symbol id="icon-sparkle-solid" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M12 3l1.88 5.79a2 2 0 0 0 1.33 1.33L21 12l-5.79 1.88a2 2 0 0 0-1.33 1.33L12 21l-1.88-5.79a2 2 0 0 0-1.33-1.33L3 12l5.79-1.88a2 2 0 0 0 1.33-1.33L12 3z"/>
-        </symbol>
-
-        <!-- User Icon -->
-        <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-        </symbol>
-
-        <symbol id="icon-user-solid" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm0 10c-4.42 0-8 3.58-8 8v1h16v-1c0-4.42-3.58-8-8-8z"/>
-        </symbol>
-
-        <!-- SVG Definitions -->
-        <symbol id="icon-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 7V4h16v3"/>
-            <path d="M9 20h6"/>
-            <path d="M12 4v16"/>
-        </symbol>
-
-        <symbol id="icon-text-solid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 7V4h16v3"/>
-            <path d="M9 20h6"/>
-            <path d="M12 4v16"/>
-        </symbol>
-
-        <!-- Arrow Right Icon -->
-        <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"/>
-            <polyline points="12 5 19 12 12 19"/>
-        </symbol>
-        
-        <!-- Alert Triangle Icon -->
-        <symbol id="icon-alert-triangle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-            <line x1="12" y1="9" x2="12" y2="13"/>
-            <line x1="12" y1="17" x2="12.01" y2="17"/>
-        </symbol>
-        
-        <!-- Incognito Icon -->
-        <symbol id="icon-incognito" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 19h16"/>
-            <path d="M6.5 17C7.3 17 9 13.5 9 10c0-3.5 1.6-6 3-6s3 2.5 3 6c0 3.5 1.7 7 2.5 7"/>
-            <path d="M8 14c0 2 2 3 4 3s4-1 4-3"/>
-        </symbol>
-
-    </svg>
-
-    <!-- JavaScript Files -->
-    <script src="js/storage.js"></script>
-    <script src="js/notifications.js"></script>
-    <script src="js/version.js"></script>
-    <script src="js/backgrounds.js"></script>
-    <script src="js/keybinds.js"></script>
-    <script src="js/shortcuts.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/grid-layout.js"></script>
-    <script src="js/onboarding.js"></script>
-    <script src="js/cache-handler.js"></script>
-    <script src="js/search.js"></script>
-    <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
