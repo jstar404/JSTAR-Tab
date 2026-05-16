@@ -6,7 +6,16 @@
   "chrome_url_overrides": {
     "newtab": "index.html"
   },
+  "background": {
+    "service_worker": "sw.js"
+  },
   "permissions": ["storage", "favicon"],
+  "host_permissions": [
+    "https://www.google.com/s2/favicons*",
+    "https://tinyurl.com/jstartab",
+    "https://fonts.googleapis.com/*",
+    "https://fonts.gstatic.com/*"
+  ],
   "icons": {
     "16": "images/icon16.png",
     "48": "images/icon48.png",
@@ -24,7 +33,7 @@
   "homepage_url": "https://jstartab.vercel.app",
   "web_accessible_resources": [
     {
-      "resources": ["fonts/*", "images/*"],
+      "resources": ["fonts/*", "images/*", "icons.svg"],
       "matches": ["<all_urls>"]
     }
   ]
