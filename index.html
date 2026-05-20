@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -21,6 +21,8 @@
       rel="stylesheet"
     />
 
+    <script src="js/main.js" defer></script>
+
     <script src="js/storage.js" defer></script>
     <script src="js/backgrounds.js" defer></script>
     <script src="js/grid-layout.js" defer></script>
@@ -35,7 +37,6 @@
     <script src="js/version.js" defer></script>
 
     <script src="js/onboarding.js" defer></script>
-    <script src="js/main.js" defer></script>
   </head>
   <body>
     <div id="onboarding-container" class="container-ob hidden">
@@ -1194,7 +1195,7 @@
             <div class="whats-new-version-row">
               <span class="whats-new-app-name">JSTAR Tab</span>
               <span class="whats-new-version-tag" id="whats-new-version-title"
-                >v3.2.5</span
+                >v3.3.0</span
               >
             </div>
             <p class="whats-new-subtitle">
@@ -1208,15 +1209,15 @@
             <div class="wn-feature">
               <div class="wn-feature-icon">
                 <svg width="20" height="20">
-                  <use href="icons.svg#database"></use>
+                  <use href="icons.svg#image"></use>
                 </svg>
               </div>
               <div class="wn-feature-text">
-                <h3>Engine Overhaul</h3>
+                <h3>Resilient Icon Engine</h3>
                 <p>
-                  The backgrounds system has been rebuilt from scratch for
-                  faster loading, better compression, and support for
-                  high-quality images.
+                  A complete rework of how shortcuts load icons, featuring a
+                  failsafe waterfall and a local fallback that works 100%
+                  offline.
                 </p>
               </div>
             </div>
@@ -1224,15 +1225,14 @@
             <div class="wn-feature">
               <div class="wn-feature-icon">
                 <svg width="20" height="20">
-                  <use href="icons.svg#command"></use>
+                  <use href="icons.svg#user"></use>
                 </svg>
               </div>
               <div class="wn-feature-text">
-                <h3>Offline Font Caching</h3>
+                <h3>Improved Onboarding</h3>
                 <p>
-                  Fonts are now cached via service workers, ensuring your
-                  personalized typography works perfectly without an internet
-                  connection.
+                  Added keyboard navigation (Enter/Esc) and fixed a bug where
+                  data imports skipped user backgrounds.
                 </p>
               </div>
             </div>
@@ -1240,14 +1240,14 @@
             <div class="wn-feature">
               <div class="wn-feature-icon">
                 <svg width="20" height="20">
-                  <use href="icons.svg#export"></use>
+                  <use href="icons.svg#zap"></use>
                 </svg>
               </div>
               <div class="wn-feature-text">
-                <h3>Selective Export</h3>
+                <h3>Stability & Speed</h3>
                 <p>
-                  Total control over your data. Choose exactly which categories
-                  to backup, from Personalization to Privacy settings.
+                  Priority asset preloading and critical bug fixes to network
+                  handling ensure the tab is instant and looks perfect offline.
                 </p>
               </div>
             </div>

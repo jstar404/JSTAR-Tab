@@ -1,15 +1,16 @@
 {
   "manifest_version": 3,
   "name": "JSTAR Tab",
-  "version": "3.2.5",
+  "version": "3.3.0",
   "description": "A new tab that actually feels like yours. Custom greetings, shortcuts, themes, backgrounds, search engines, and built-in privacy features — all in one place.",
   "chrome_url_overrides": {
     "newtab": "index.html"
   },
   "background": {
-    "service_worker": "sw.js"
+    "service_worker": "sw.js",
+    "type": "module"
   },
-  "permissions": ["storage", "favicon"],
+  "permissions": ["storage", "tabs"],
   "host_permissions": [
     "https://www.google.com/s2/favicons*",
     "https://tinyurl.com/jstartab",

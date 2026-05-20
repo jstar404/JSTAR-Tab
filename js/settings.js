@@ -1730,14 +1730,14 @@ function updateVersionInformation() {
   if (!updateInfoContent) return;
 
   if (changelogLink) {
-    const manifestVersion = chrome.runtime.getManifest().version;
+    const manifestVersion = browserAPI.runtime.getManifest().version;
     const baseUrl = "https://jstartab.vercel.app/changelog";
     changelogLink.href = manifestVersion
       ? `${baseUrl}/${manifestVersion}`
       : baseUrl;
   }
 
-  const manifestVersion = chrome.runtime.getManifest().version;
+  const manifestVersion = browserAPI.runtime.getManifest().version;
   let isLatest = false;
   let latestVersion = "";
 

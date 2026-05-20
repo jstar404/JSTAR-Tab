@@ -1,5 +1,5 @@
 const versionUrl = "https://tinyurl.com/jstartab";
-const manifestVersion = chrome.runtime.getManifest().version;
+const manifestVersion = browserAPI.runtime.getManifest().version;
 
 function compareVersions(version1, version2) {
   const v1 = version1.split(".").map(Number);
@@ -203,7 +203,7 @@ function showUpdateNotification(latestVersion) {
 checkForUpdate();
 
 document.addEventListener("DOMContentLoaded", () => {
-  const version = chrome.runtime.getManifest().version;
+  const version = browserAPI.runtime.getManifest().version;
   const versionElement = document.getElementById("extension-version");
   if (versionElement) {
     versionElement.innerHTML = `JSTAR Tab v<a href="https://github.com/jstar404/JSTAR-Tab/releases/${version}" target="_blank" style="color: inherit;">${version}</a> <span id="version-icon" class="version-icon"></span>`;

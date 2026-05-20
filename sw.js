@@ -1,16 +1,29 @@
+const browserAPI = typeof browser !== "undefined" ? browser : chrome;
+
 const CACHE_PREFIX = "jstartab-cache";
 const VERSION_URL = "https://tinyurl.com/jstartab";
 const STATIC_CACHE = "jstartab-static";
 const FONTS_CACHE = "jstartab-fonts";
 
-const FALLBACK_FAVICON_SVG = "icons.svg#globe";
+const CORE_ASSETS = [
+  "icons.svg",
+  "images/icon16.png",
+  "images/icon48.png",
+  "images/icon128.png",
+  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css",
+];
 
 self.addEventListener("install", (event) => {
   self.skipWaiting();
   event.waitUntil(
-    caches.open(STATIC_CACHE).then((cache) => 
-      cache.add(VERSION_URL).catch(() => {})
-    ),
+    caches
+      .open(STATIC_CACHE)
+      .then((cache) =>
+        Promise.all([
+          cache.add(VERSION_URL),
+          ...CORE_ASSETS.map((asset) => cache.add(asset).catch(() => {})),
+        ]),
+      ),
   );
 });
 
@@ -27,11 +40,22 @@ self.addEventListener("message", async (event) => {
       const cache = await caches.open(cacheName);
 
       await Promise.allSettled(
-        faviconUrls.map((url) => 
-          fetch(new Request(url, { mode: 'no-cors' }))
-            .then((res) => cache.put(url, res))
-            .catch(() => {})
-        )
+        faviconUrls.map((url) => {
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 3000);
+          return fetch(
+            new Request(url, { mode: "no-cors", signal: controller.signal }),
+          )
+            .then((res) => {
+              clearTimeout(timeoutId);
+              if (res.type === "opaque" || res.ok) {
+                return cache.put(url, res);
+              }
+            })
+            .catch(() => {
+              clearTimeout(timeoutId);
+            });
+        }),
       );
 
       const keys = await caches.keys();
@@ -50,9 +74,48 @@ self.addEventListener("fetch", (event) => {
   const request = event.request;
   const url = new URL(request.url);
 
+  if (url.href.startsWith("https://www.google.com/s2/favicons")) {
+    event.respondWith(
+      caches.match(request).then((response) => {
+        if (response) return response;
+
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 3000);
+
+        return fetch(
+          new Request(request.url, {
+            mode: "no-cors",
+            signal: controller.signal,
+          }),
+        )
+          .then((networkResponse) => {
+            clearTimeout(timeoutId);
+            if (networkResponse.type === "opaque" || networkResponse.ok) {
+              const cacheCopy = networkResponse.clone();
+              const dateStr = new Date().toISOString().split("T")[0];
+              caches
+                .open(`${CACHE_PREFIX}-${dateStr}`)
+                .then((cache) => {
+                  cache.put(event.request, cacheCopy);
+                })
+                .catch(() => {});
+              return networkResponse;
+            }
+            return new Response(null, { status: 404 });
+          })
+          .catch(() => {
+            clearTimeout(timeoutId);
+            return new Response(null, { status: 404 });
+          });
+      }),
+    );
+    return;
+  }
+
   if (
     url.hostname === "fonts.googleapis.com" ||
-    url.hostname === "fonts.gstatic.com"
+    url.hostname === "fonts.gstatic.com" ||
+    url.hostname === "cdnjs.cloudflare.com"
   ) {
     event.respondWith(
       caches.open(FONTS_CACHE).then((cache) => {
@@ -73,32 +136,6 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  if (event.request.url.startsWith("https://www.google.com/s2/favicons")) {
-    event.respondWith(
-      caches.match(event.request).then((response) => {
-        if (response) return response;
-
-        return fetch(new Request(event.request.url, { mode: 'no-cors' }))
-          .then((fetchResponse) => {
-            const cacheCopy = fetchResponse.clone();
-            const dateStr = new Date().toISOString().split("T")[0];
-            caches
-              .open(`${CACHE_PREFIX}-${dateStr}`)
-              .then((cache) => {
-                cache.put(event.request, cacheCopy);
-              })
-              .catch(() => {});
-
-            return fetchResponse;
-          })
-          .catch(() => {
-            return fetch(FALLBACK_FAVICON_SVG);
-          });
-      }),
-    );
-    return;
-  }
-
   if (request.url === VERSION_URL) {
     event.respondWith(
       caches.open(STATIC_CACHE).then((cache) =>
@@ -114,5 +151,17 @@ self.addEventListener("fetch", (event) => {
           ),
       ),
     );
+    return;
   }
+
+  event.respondWith(
+    caches.match(request).then((response) => {
+      return (
+        response ||
+        fetch(request).catch(() => {
+          return new Response(null, { status: 404 });
+        })
+      );
+    }),
+  );
 });

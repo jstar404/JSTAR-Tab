@@ -1,3 +1,5 @@
+window.browserAPI = typeof browser !== "undefined" ? browser : chrome;
+
 window.addEventListener("unhandledrejection", (event) => {
   console.warn("Recovered from unhandled promise:", event.reason);
   event.preventDefault();
@@ -42,10 +44,6 @@ console.error = function (...args) {
     originalConsoleError.apply(console, args);
   }
 };
-
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/sw.js");
-}
 
 async function updateGreeting() {
   const greetingElement = document.getElementById("greeting");
@@ -151,7 +149,7 @@ function initWhatsNew() {
   if (!modal) return;
 
   const shouldShow = Storage.get("showWhatsNew");
-  const manifestVersion = chrome.runtime.getManifest().version;
+  const manifestVersion = browserAPI.runtime.getManifest().version;
 
   const versionTitle = document.getElementById("whats-new-version-title");
   const changelogBtn = document.getElementById("whats-new-changelog-btn");

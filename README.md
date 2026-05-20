@@ -6,7 +6,7 @@
 
 **A new tab that actually feels like yours.**
 
-[![Version](https://img.shields.io/badge/version-3.2.5-blue?style=flat-square)](https://github.com/jstar404/JSTAR-Tab/releases/latest)
+[![Version](https://img.shields.io/badge/version-3.3.0-blue?style=flat-square)](https://github.com/jstar404/JSTAR-Tab/releases/latest)
 [![License](https://img.shields.io/github/license/jstar404/JSTAR-Tab?style=flat-square)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/jstar404/JSTAR-Tab?style=flat-square)](https://github.com/jstar404/JSTAR-Tab/stargazers)
 

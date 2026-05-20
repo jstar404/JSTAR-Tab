@@ -1,14 +1,42 @@
+const IconService = {
+  FALLBACK_ICON:
+    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM4ODg4ODgiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCI+PC9jaXJjbGU+PGxpbmUgeDE9IjIiIHkxPSIxMiIgeDI9IjIyIiB5Mj0iMTIiPjwvbGluZT48cGF0aCBkPSJNMTIgMmExNS4zIDE1LjMgMCAwIDEgNCAxMCAxNS4zIDE1LjMgMCAwIDEgLTQgMTBBMTUuMyAxNS4zIDAgMCAxIDggMTIgMTUuMyAxNS4zIDAgMCAxIDEyIDJaIj48L3BhdGg+PC9zdmc+",
+
+  getHostname: (url) => {
+    try {
+      return new URL(url).hostname;
+    } catch (e) {
+      return "";
+    }
+  },
+
+  resolve: (shortcut) => {
+    const hostname = IconService.getHostname(shortcut.url);
+    return `https://www.google.com/s2/favicons?domain=${hostname}&sz=64`;
+  },
+
+  handleError: (img, shortcut) => {
+    if (img.dataset.handlingError === "true") return;
+    img.dataset.handlingError = "true";
+    img.onerror = null;
+    img.src = IconService.FALLBACK_ICON;
+    img.style.opacity = "0.6";
+  },
+};
+
 const shortcuts = {
   MAX_SHORTCUTS: 14,
 
   validateAndFormatUrl: (url) => {
-    if (!/^https?:\/\//i.test(url)) {
-      url = "https://" + url;
+    if (!url) return false;
+    let formatted = url.trim();
+    if (!/^https?:\/\//i.test(formatted)) {
+      formatted = "https://" + formatted;
     }
 
     try {
-      new URL(url);
-      return url;
+      new URL(formatted);
+      return formatted;
     } catch (e) {
       return false;
     }
@@ -16,6 +44,8 @@ const shortcuts = {
 
   add: (url, name, isPasswordProtected = false) => {
     const currentShortcuts = Storage.get("shortcuts") || [];
+    const nameInput = document.getElementById("shortcut-name");
+    const urlInput = document.getElementById("shortcut-url");
 
     if (currentShortcuts.length >= shortcuts.MAX_SHORTCUTS) {
       const errorElement = document.getElementById("shortcut-url-error");
@@ -26,6 +56,16 @@ const shortcuts = {
       return false;
     }
 
+    if (!name || name.trim() === "") {
+      const nameErrorElement = document.getElementById("shortcut-name-error");
+      if (nameErrorElement) {
+        nameErrorElement.textContent = "Shortcut name is required.";
+        nameErrorElement.classList.remove("hidden");
+      }
+      if (nameInput) nameInput.focus();
+      return false;
+    }
+
     const formattedUrl = shortcuts.validateAndFormatUrl(url);
     if (!formattedUrl) {
       const errorElement = document.getElementById("shortcut-url-error");
@@ -33,15 +73,7 @@ const shortcuts = {
         errorElement.textContent = "Invalid URL format!";
         errorElement.classList.remove("hidden");
       }
-      return false;
-    }
-
-    if (!name) {
-      const nameErrorElement = document.getElementById("shortcut-name-error");
-      if (nameErrorElement) {
-        nameErrorElement.textContent = "Shortcut name is required.";
-        nameErrorElement.classList.remove("hidden");
-      }
+      if (urlInput) urlInput.focus();
       return false;
     }
 
@@ -51,7 +83,7 @@ const shortcuts = {
     const newShortcutIndex = currentShortcuts.length;
     currentShortcuts.push({
       url: formattedUrl,
-      name,
+      name: name.trim(),
       isPasswordProtected: isPasswordProtected || isDomainProtected || false,
     });
 
@@ -220,6 +252,8 @@ const shortcuts = {
   edit: (index, url, name, isPasswordProtected) => {
     const currentShortcuts = Storage.get("shortcuts") || [];
     const shortcut = currentShortcuts[index];
+    if (!shortcut) return false;
+
     const originalUrl = shortcut.url;
     const originalDomain = shortcuts.extractDomain(originalUrl);
     const newDomain = shortcuts.extractDomain(url);
@@ -271,31 +305,32 @@ const shortcuts = {
 
   render: () => {
     const grid = document.getElementById("shortcuts-grid");
+    if (!grid) return;
     const currentShortcuts = Storage.get("shortcuts") || [];
     const isAnonymous = Storage.get("anonymousMode") || false;
 
     grid.innerHTML = "";
 
     currentShortcuts.forEach((shortcut, index) => {
+      if (!shortcut || !shortcut.url) return;
+
       const element = document.createElement("div");
       element.className = `shortcut ${isAnonymous ? "blurred" : ""} ${shortcut.isPasswordProtected ? "password-protected" : ""}`;
 
       element.dataset.index = index;
 
       const icon = document.createElement("img");
-      const urlObj = new URL(shortcut.url);
+      icon.dataset.handlingError = "false";
 
-      icon.src = `https://www.google.com/s2/favicons?domain=${urlObj.hostname}&sz=64`;
+      icon.src = IconService.resolve(shortcut);
 
-      icon.onerror = () => {
-        icon.src = "images/icon48.png";
-      };
+      icon.onerror = () => IconService.handleError(icon, shortcut);
 
-      icon.alt = shortcut.name;
+      icon.alt = shortcut.name || "Shortcut";
       icon.draggable = false;
 
       const name = document.createElement("span");
-      name.textContent = shortcut.name;
+      name.textContent = shortcut.name || "Unknown";
 
       element.appendChild(icon);
       element.appendChild(name);
@@ -565,6 +600,7 @@ const shortcuts = {
             }
           } else {
             notifications.show("Please enter a valid password!", "error");
+            masterPasswordInput.focus();
           }
         }
       });
@@ -612,7 +648,14 @@ const shortcuts = {
             }
 
             modal.classList.remove("hidden");
-            modal.classList.add("active");
+            setTimeout(() => {
+              modal.classList.add("active");
+              if (nameInput) {
+                nameInput.focus();
+                const len = nameInput.value.length;
+                nameInput.setSelectionRange(len, len);
+              }
+            }, 100);
 
             const saveButton = document.getElementById("save-edit-shortcut");
             const closeButton = document.getElementById("close-edit-shortcut");
@@ -637,12 +680,14 @@ const shortcuts = {
               if (!newName && nameErrorElement) {
                 nameErrorElement.textContent = "Shortcut name is required.";
                 nameErrorElement.classList.remove("hidden");
+                nameInput.focus();
                 return;
               }
 
               if (!newUrl && urlErrorElement) {
                 urlErrorElement.textContent = "Shortcut URL is required.";
                 urlErrorElement.classList.remove("hidden");
+                urlInput.focus();
                 return;
               }
 
@@ -650,6 +695,7 @@ const shortcuts = {
               if (!formattedUrl && urlErrorElement) {
                 urlErrorElement.textContent = "Invalid URL format!";
                 urlErrorElement.classList.remove("hidden");
+                urlInput.focus();
                 return;
               }
 
@@ -670,6 +716,7 @@ const shortcuts = {
                 if (urlErrorElement) {
                   urlErrorElement.textContent = `This domain (${domain}) already has password protected shortcuts. All shortcuts for this domain must be password protected.`;
                   urlErrorElement.classList.remove("hidden");
+                  urlInput.focus();
                 }
 
                 if (protectCheckbox && isPasswordProtectionEnabled) {
@@ -770,10 +817,15 @@ const shortcuts = {
       }
 
       modal.classList.remove("hidden");
-      modal.classList.add("active");
+      const nameInput = document.getElementById("shortcut-name");
+      setTimeout(() => {
+        modal.classList.add("active");
+        if (nameInput) {
+          nameInput.focus();
+        }
+      }, 100);
 
       const urlInput = document.getElementById("shortcut-url");
-      const nameInput = document.getElementById("shortcut-name");
 
       const saveShortcutButton = document.getElementById("save-shortcut");
       if (saveShortcutButton) {
@@ -787,12 +839,14 @@ const shortcuts = {
           if (!name && nameErrorElement) {
             nameErrorElement.textContent = "Shortcut name is required.";
             nameErrorElement.classList.remove("hidden");
+            nameInput.focus();
             return;
           }
 
           if (!url && urlErrorElement) {
             urlErrorElement.textContent = "Shortcut URL is required.";
             urlErrorElement.classList.remove("hidden");
+            urlInput.focus();
             return;
           }
 
@@ -802,6 +856,7 @@ const shortcuts = {
             if (!formattedUrl && urlErrorElement) {
               urlErrorElement.textContent = "Invalid URL format!";
               urlErrorElement.classList.remove("hidden");
+              urlInput.focus();
               return;
             }
           } catch (e) {
@@ -829,6 +884,7 @@ const shortcuts = {
             if (urlErrorElement) {
               urlErrorElement.textContent = `This domain (${domain}) already has password protected shortcuts. All shortcuts for this domain must be password protected.`;
               urlErrorElement.classList.remove("hidden");
+              urlInput.focus();
             }
 
             if (passwordProtectCheckbox && isPasswordProtectionEnabled) {
@@ -912,12 +968,17 @@ const shortcuts = {
         shortcutChip.dataset.index = currentShortcuts.indexOf(shortcut);
 
         const shortcutIcon = document.createElement("img");
-        const urlObj = new URL(shortcut.url);
-        icon.src = `https://www.google.com/s2/favicons?domain=${urlObj.hostname}&sz=64`;
-        shortcutIcon.alt = shortcut.name;
+        shortcutIcon.dataset.attempt = "0";
+        shortcutIcon.dataset.handlingError = "false";
+        shortcutIcon.src = IconService.resolve(shortcut);
+
+        shortcutIcon.onerror = () =>
+          IconService.handleError(shortcutIcon, shortcut);
+
+        shortcutIcon.alt = shortcut.name || "Shortcut";
 
         const shortcutName = document.createElement("span");
-        shortcutName.textContent = shortcut.name;
+        shortcutName.textContent = shortcut.name || "Unknown";
 
         const removeButton = document.createElement("button");
         removeButton.className = "remove-chip-btn";
@@ -981,14 +1042,18 @@ const shortcuts = {
         item.dataset.index = currentShortcuts.indexOf(shortcut);
 
         const icon = document.createElement("img");
-        const urlObj = new URL(shortcut.url);
-        icon.src = `https://www.google.com/s2/favicons?domain=${urlObj.hostname}&sz=64`;
-        icon.alt = shortcut.name;
+        icon.dataset.attempt = "0";
+        icon.dataset.handlingError = "false";
+        icon.src = IconService.resolve(shortcut);
+
+        icon.onerror = () => IconService.handleError(icon, shortcut);
+
+        icon.alt = shortcut.name || "Shortcut";
         icon.style.width = "16px";
         icon.style.height = "16px";
 
         const name = document.createElement("span");
-        name.textContent = shortcut.name;
+        name.textContent = shortcut.name || "Unknown";
 
         item.appendChild(icon);
         item.appendChild(name);
